@@ -1,0 +1,340 @@
+:root{
+    --blue:#33658a;
+    --yellow:#f6ae2d;
+    --orange:#f26419;
+    --grey:#E1E1E1;
+    --box-shadow: 0 5px 2px -2px rgba(0,0,0,.25);
+    --border: 1px solid var(--grey);
+}
+
+* {
+    color: black;
+    font-size: 15px;
+    font-weight: 400;
+    padding: 0; margin: 0;
+    box-sizing: border-box;
+    border: none; outline: none;
+    list-style: none;
+    text-decoration: none;
+    font-family: 'Rubik', sans-serif;
+}
+
+header{
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+.header-one, .header-two{
+    height: 50px;
+    padding: 10px 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-one{
+    background-color: black;
+}
+
+.header-one .search{
+    background-color: white;
+    width: 250px;
+    height: 30px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.header-one .search i{
+    width: 15px;
+    height: 15px;
+    margin: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-one .search input{
+    height: 25px;
+    width: 225px;
+}
+
+.header-one .icons-search{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.header-one .icons-search i{
+    color: white;
+    font-size: 25px;
+}
+
+.header-two{
+    background-color: white;
+    box-shadow: var(--box-shadow);
+}
+
+.header-two .title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2.5px;
+}
+
+.header-two .title > h1{
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.header-two .title > i{
+    font-size: 25px;
+}
+
+.header-two nav ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.home{
+    height: 100vh;
+    background-image: url(../Images/3333140.jpg);
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.home .home-box{
+    background-color: black;
+    width: 1000px;
+    height: 100px;
+    padding: 10px;
+}
+
+.home .home-box .flap{
+    background-color: white;
+    height: 20px;
+    width: 100px;
+    padding: 0px 10px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    gap: 2.5px;
+}
+
+.home .row{
+    display: flex;
+    gap: 10px;
+}
+
+.home .column{
+    background-color: white;
+    width: 33.33%;
+    height: 50px;
+    padding: 5px 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.home .column label{
+    font-size: 12.5px;
+}
+
+.home .column .date{
+    display: flex;
+}
+
+.home button{
+    width: 100px;
+}
+
+h2{
+    font-size: 25px;
+    font-weight: 600;
+    padding-bottom: 25px;
+    text-align: center;
+}
+
+.why-us, .conteiner-card, .trips-by-region, .subscriptions-trips{
+    padding: 50px 100px;
+}
+
+.why-us > div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.why-us > div div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 150px;
+}
+
+.why-us > div div div{
+    background-color: black;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.why-us > div div div i{
+    color: white;
+    font-size: 35px;
+}
+
+.conteiner-card{
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+}
+
+.card{
+    background-color: white;
+    width: 250px;
+}
+
+.card img{
+    width: 250px;
+}
+
+.trips-by-region{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.trips-by-region > div{
+    width: 33%;
+}
+
+.trips-by-region > div img{
+    width: 100%;
+}
+
+.subscriptions-trips {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+}
+
+.subscriptions-trips div{
+    width: 33%;
+    background-color: var(--grey);
+    margin: 0px 50px;
+    padding: 25px;
+}
+
+.subscriptions-trips div h3{
+    font-size: 25px;
+    padding-bottom: 10px;
+}
+
+
+
+
+
+.newslatter{
+    margin-top: 25px;
+    background-color: var(--grey);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.newslatter p{
+    font-size: 17.5px;
+    margin-bottom: 15px;
+}
+
+.newslatter input{
+    width: 300px;
+    padding: 5px 10px;
+    margin-bottom: 15px;
+    border: 1px solid var(--grey);
+}
+
+.newslatter button{
+    background-color: black;
+    color: white;
+    padding: 10px;
+    margin-bottom: 25px;
+}
+
+
+.footer{
+    background-color: black;
+    padding: 25px 75px;
+}
+
+.footer .links{
+    display: flex;
+    justify-content: space-evenly;
+    text-align: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.footer .links div{
+    width: 250px;
+}
+
+.footer .links div h3{
+    font-size: 17.5px;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.footer .links div p{
+    color: white;
+}
+
+.footer .icons-rrss{
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.footer .icons-rrss button{
+    background-color: var(--purple2);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.footer .icons-rrss button:hover{
+    background-color: var(--purple1);
+}
+
+.footer .icons-rrss i{
+    color: white;
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.copyright{
+    background-color: #111111;
+    padding: 5px;
+    text-align: center;
+}
