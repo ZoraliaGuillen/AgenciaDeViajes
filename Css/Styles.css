@@ -101,8 +101,13 @@ header{
     gap: 20px;
 }
 
+.open, .close{
+    display: none;
+}
+
 .home{
     height: 100vh;
+    width: 100%;
     background-image: url(../Images/3333140.jpg);
     background-size: cover;
     display: flex;
@@ -164,8 +169,17 @@ h2{
     text-align: center;
 }
 
-.why-us, .conteiner-card, .trips-by-region, .subscriptions-trips{
-    padding: 50px 100px;
+.why-us, .recommended-trips, .trips-by-region{
+    padding: 0px 100px;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-container-recommended-trips, .card-container-trips-by-region{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 .why-us > div{
@@ -197,11 +211,8 @@ h2{
     font-size: 35px;
 }
 
-.conteiner-card{
-    background-color: black;
-    display: flex;
-    justify-content: space-between;
-}
+
+
 
 .card{
     background-color: white;
@@ -212,16 +223,9 @@ h2{
     width: 250px;
 }
 
-.trips-by-region{
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    gap: 15px;
-}
 
-.trips-by-region > div{
-    width: 33%;
-}
+
+
 
 .trips-by-region > div img{
     width: 100%;
@@ -338,3 +342,45 @@ h2{
     padding: 5px;
     text-align: center;
 }
+
+
+@media (max-width:991px){
+
+    .open, .close{
+         display: block;
+     }
+ 
+     .close{
+         padding: 5px 10px;
+         background-color: var(--grey);
+     }
+ 
+     .close i{
+         font-size: 20px;
+         color: var(--purple1);
+     }
+ 
+     .nav{
+         opacity: 0;
+         visibility: hidden;
+         position: absolute;
+         background-color: var(--grey);
+         top: 0;
+         left: 0;
+         bottom: 0;
+         height: 100vh;
+         width: 200px;
+         padding: 10px;
+         box-shadow: var(--box-shadow);
+         display: flex;
+         flex-direction: column;
+         align-items: flex-start;
+         gap: 5px;
+     }
+ 
+     .nav.visibility{
+         opacity: 1;
+         visibility: visible;
+         z-index:1000;
+     }
+    }

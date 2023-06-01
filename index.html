@@ -35,16 +35,18 @@
                 <h1>Viajerísimo.</h1>
             </div>
             <nav>
-                <ul>
-                    <li><a href="">INICIO</a></li>
-                    <li><a href="">VIAJES ARGENTINA</a></li>
-                    <li><a href="">NORTE</a></li>
-                    <li><a href="">CENTRO</a></li>
-                    <li><a href="">SUR</a></li>
-                    <li><a href="">CONTACTO</a></li>
-                    <li><a href="">BLOG</a></li>
+                <ul class="nav">
+                    <button class="close" id="close"><i class="fa-solid fa-xmark"></i></button>
+                    <li class="navLink"><a href="./index.html#Index">INICIO</a></li>
+                    <li class="navLink"><a href="./index.html#ViajesArgentina">VIAJES ARGENTINA</a></li>
+                    <li class="navLink"><a href="./index.html#Norte">NORTE</a></li>
+                    <li class="navLink"><a href="./index.html#Centro">CENTRO</a></li>
+                    <li class="navLink"><a href="./index.html#Sur">SUR</a></li>
+                    <li class="navLink"><a href="./index.html#Contacto">CONTACTO</a></li>
+                    <li class="navLink"><a href="./index.html#Blog">BLOG</a></li>
                 </ul>
             </nav>
+            <button class="open" id="open"><i class="fa-solid fa-bars"></i></button>
         </section>
     </header>
     <main>
@@ -98,8 +100,8 @@
             </div>
         </section>
         <section class="recommended-trips">
-            <h2>VIAJES RECOMENDADOS</h2>
-            <div class="conteiner-card">
+            <h2>Viajes Recomendados</h2>
+            <div class="card-container-recommended-trips">
                 <div class="card">
                     <img src="./Images/1.png" alt="">
                     <h3>Bariloche</h3>
@@ -144,18 +146,35 @@
             </div>
         </section>
         <section class="trips-by-region">
-            <div>
-                <img src="./Images/NORTE.png" alt="">
-                <h3>NORTE</h3>
+            <h2>Descubre los Viajes por Región</h2>
+            <div class="card-container-trips-by-region">
+                <div>
+                    <img src="./Images/NORTE.png" alt="">
+                    <h3>NORTE</h3>
+                </div>
+                <div>
+                    <img src="./Images/CENTRO.png" alt="">
+                    <h3>CENTRO</h3>
+                </div>
+                <div>
+                    <img src="./Images/SUR.png" alt="">
+                    <h3>SUR</h3>
+                </div>
             </div>
-            <div>
-                <img src="./Images/CENTRO.png" alt="">
-                <h3>CENTRO</h3>
-            </div>
-            <div>
-                <img src="./Images/SUR.png" alt="">
-                <h3>SUR</h3>
-            </div>
+        </section>
+        <section>
+            <p>Río Negro</p>
+            <p>Santa Cruz</p>
+            <p>Buenos Aires</p>
+            <p>Misiones</p>
+            <p>Córdoba</p>
+            <p>San Salvador de Jujuy</p>
+            <p>Mendoza</p>
+            <p>Chubut</p>
+            <p>Salta</p>
+            <p>Santa Fé</p>
+            <p>San Miguel de Tucumán</p>
+            <p>Tierra Del Fuego</p>
         </section>
         <section class="subscriptions-trips">
             <div>
@@ -183,11 +202,19 @@
         <section class="blog">
 
         </section>
-        <section class="newslatter" id="newslatter">
+        <section class="newslatter">
             <h2 class="newslatterTitle">NEWSLATTER</h2>
             <p>Suscribite a nuestro NEWSLATTER para conocer más de Viajerisimo.</p>
             <input type="email" name="" id="" placeholder="Ingresa tu email..">
             <button>Suscribite</button>
+        </section>
+        <section class="all-trips">
+            <div class="filters">
+
+            </div>
+            <div class="card-container-all-trips">
+
+            </div>
         </section>
         <section class="contact">
 
@@ -228,6 +255,7 @@
             <h4>COPYRIGTH @ 2023 by</h3>
         </section>
     </footer>
+    <script src="./Js/Index.js"></script>
 </body>
 
 </html>
