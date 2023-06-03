@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="./Images/.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../Css/Styles.css">
+    <title>Viajerisimo</title>
+</head>
+
+<body>
+    <header>
+        <section class="header-one">
+            <div class="search">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="search" placeholder="Busca aquí...">
+            </div>
+            <div class="icons-search">
+                <i class="fa-solid fa-user"></i>
+                <i class="fa-solid fa-cart-shopping"></i>
+            </div>
+        </section>
+        <section class="header-two">
+            <div class="title">
+                <i class="fa-solid fa-suitcase-rolling"></i>
+                <h1>Viajerísimo.</h1>
+            </div>
+            <nav>
+                <ul class="nav">
+                    <button class="close" id="close"><i class="fa-solid fa-xmark"></i></button>
+                    <li class="navLink"><a href="../index.html?page=inicio" id="inicio">INICIO</a></li>
+                    <li class="navLink"><a href="../index.html?page=viajesArgentina" id="viajesArgentina">VIAJES POR
+                            ARGENTINA</a></li>
+                    <li class="navLink"><a href="../index.html?page=norte" id="norte">NORTE</a></li>
+                    <li class="navLink"><a href="../index.html?page=centro" id="centro">CENTRO</a></li>
+                    <li class="navLink"><a href="../index.html?page=sur" id="sur">SUR</a></li>
+                    <li class="navLink"><a href="../index.html?page=contacto" id="contacto">CONTACTO</a></li>
+                    <li class="navLink"><a href="../index.html?page=blog" id="blog">BLOG</a></li>
+                </ul>
+            </nav>
+            <button class="open" id="open"><i class="fa-solid fa-bars"></i></button>
+        </section>
+    </header>
+    <main>
+    </main>
+    <footer>
+        <section class="footer">
+            <div class="links">
+                <div>
+                    <h3>Enlaces:</h3>
+                    <p>Todos los Viajes</p>
+                    <p>Norte</p>
+                    <p>Centro</p>
+                    <p>Sur</p>
+                    <p>Contacto</p>
+                </div>
+                <div>
+                    <h3>Otros Enlaces:</h3>
+                    <p>Aviso Legal</p>
+                    <p>Política de Privacidad</p>
+                    <p>Términos y Condiciones</p>
+                </div>
+                <div>
+                    <h3>Contacto Rápido:</h3>
+                    <p>+123-456-7890</p>
+                    <p>Viajerisimo@gmail.com</p>
+                    <p>Capital Federal, Argentina</p>
+                </div>
+            </div>
+            <div class="icons-rrss">
+                <button><i class="fa-brands fa-twitter"></i></button>
+                <button><i class="fa-brands fa-facebook-f"></i></button>
+                <button><i class="fa-brands fa-instagram"></i></button>
+                <button><i class="fa-brands fa-youtube"></i></dbutton>
+            </div>
+        </section>
+        <section class="copyright">
+            <h4>COPYRIGTH @ 2023 by</h3>
+        </section>
+    </footer>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+    <script>
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+            apiKey: "AIzaSyC9U4JuAurn7M-k2s5e7YdcPjuj5pY5AZE",
+            authDomain: "viajerisimo-arg.firebaseapp.com",
+            projectId: "viajerisimo-arg",
+            storageBucket: "viajerisimo-arg.appspot.com",
+            messagingSenderId: "91278842631",
+            appId: "1:91278842631:web:f81ca21bcc49a8542543a2",
+            measurementId: "G-ZR5W9JRQ3P"
+        };
+        firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore()
+    </script>
+    <script src="../Js/Index.js"></script>
+</body>

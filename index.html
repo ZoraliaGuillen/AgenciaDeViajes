@@ -37,21 +37,23 @@
             <nav>
                 <ul class="nav">
                     <button class="close" id="close"><i class="fa-solid fa-xmark"></i></button>
-                    <li class="navLink"><a href="./index.html#Index">INICIO</a></li>
-                    <li class="navLink"><a href="./index.html#ViajesArgentina">VIAJES ARGENTINA</a></li>
-                    <li class="navLink"><a href="./index.html#Norte">NORTE</a></li>
-                    <li class="navLink"><a href="./index.html#Centro">CENTRO</a></li>
-                    <li class="navLink"><a href="./index.html#Sur">SUR</a></li>
-                    <li class="navLink"><a href="./index.html#Contacto">CONTACTO</a></li>
-                    <li class="navLink"><a href="./index.html#Blog">BLOG</a></li>
+                    <li class="navLink"><a href="./index.html#inicio" id="inicio">INICIO</a></li>
+                    <li class="navLink"><a href="./index.html#viajesArgentina" id="viajesArgentina">VIAJES POR
+                            ARGENTINA</a></li>
+                    <li class="navLink"><a href="./index.html#norte" id="norte">NORTE</a></li>
+                    <li class="navLink"><a href="./index.html#centro" id="centro">CENTRO</a></li>
+                    <li class="navLink"><a href="./index.html#sur" id="sur">SUR</a></li>
+                    <li class="navLink"><a href="./index.html#contacto" id="contacto">CONTACTO</a></li>
+                    <li class="navLink"><a href="./index.html#blog" id="blog">BLOG</a></li>
                 </ul>
             </nav>
             <button class="open" id="open"><i class="fa-solid fa-bars"></i></button>
         </section>
     </header>
     <main>
-        <section class="home">
+        <section class="home" id="home">
             <div class="home-box">
+                <button><a href="./Html/Details.html">DETALLES</a></button>
                 <div class="flap">
                     <i class="fa-solid fa-suitcase-rolling"></i>
                     <h4>Viaje</h4>
@@ -76,7 +78,7 @@
                 </div>
             </div>
         </section>
-        <section class="why-us">
+        <section class="why-us" id="why-us">
             <h2>¿POR QUÉ ELEGIRNOS?</h2>
             <div>
                 <div>
@@ -99,7 +101,7 @@
                 </div>
             </div>
         </section>
-        <section class="recommended-trips">
+        <section class="recommended-trips" id="recommended-trips">
             <h2>Viajes Recomendados</h2>
             <div class="card-container-recommended-trips">
                 <div class="card">
@@ -145,7 +147,7 @@
                 </div>
             </div>
         </section>
-        <section class="trips-by-region">
+        <section class="trips-by-region" id="trips-by-region">
             <h2>Descubre los Viajes por Región</h2>
             <div class="card-container-trips-by-region">
                 <div>
@@ -162,7 +164,7 @@
                 </div>
             </div>
         </section>
-        <section>
+        <section class="trips-by-province" id="trips-by-province">
             <p>Río Negro</p>
             <p>Santa Cruz</p>
             <p>Buenos Aires</p>
@@ -176,7 +178,7 @@
             <p>San Miguel de Tucumán</p>
             <p>Tierra Del Fuego</p>
         </section>
-        <section class="subscriptions-trips">
+        <section class="subscriptions-trips" id="subscriptions-trips">
             <div>
                 <h3>Viajero Basic</h3>
                 <p>A partir de 500 millas por año, obten un 5% de descuento.</p>
@@ -199,24 +201,38 @@
                 <button>Subscribirse</button>
             </div>
         </section>
-        <section class="blog">
-
-        </section>
-        <section class="newslatter">
+        <section class="newslatter" id="newslatter">
             <h2 class="newslatterTitle">NEWSLATTER</h2>
             <p>Suscribite a nuestro NEWSLATTER para conocer más de Viajerisimo.</p>
             <input type="email" name="" id="" placeholder="Ingresa tu email..">
             <button>Suscribite</button>
         </section>
-        <section class="all-trips">
+        
+        <section class="all-trips" id="all-trips">
             <div class="filters">
+                <h3>FILTRAR POR:</h3>
+                <button class="acordeon">
+                    <h3>PROVINCIA<i class="fa-solid fa-chevron-down"></i></h3>
+                    <div class="category" id="category">
+                        <label><input type="checkbox" value="Carrera">Carrera</label>
+                        <label><input type="checkbox" value="Concierto de Música">Concierto de Música</label>
+                        <label><input type="checkbox" value="Feria de Comida">Feria de Comida</label>
+                        <label><input type="checkbox" value="Fiesta de Disfraces">Fiesta de Disfraces</label>
+                        <label><input type="checkbox" value="Intercambio de Libros">Intercambio de Libros</label>
+                        <label><input type="checkbox" value="Salida al museo">Salida al Museo</label>
+                        <label><input type="checkbox" value="Vamos al Cine">Vamos al Cine</label>
+                    </div>
+                </button>
 
             </div>
-            <div class="card-container-all-trips">
-
+            <div class="card-container-all-trips" id="card-container-all-trips">
+                <h1 class="loading">Carganado Viajes...</h1>
             </div>
         </section>
-        <section class="contact">
+        <section class="blog" id="blog">
+
+        </section>
+        <section class="contact" id="contact">
 
         </section>
     </main>
@@ -255,6 +271,22 @@
             <h4>COPYRIGTH @ 2023 by</h3>
         </section>
     </footer>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+    <script>
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+            apiKey: "AIzaSyC9U4JuAurn7M-k2s5e7YdcPjuj5pY5AZE",
+            authDomain: "viajerisimo-arg.firebaseapp.com",
+            projectId: "viajerisimo-arg",
+            storageBucket: "viajerisimo-arg.appspot.com",
+            messagingSenderId: "91278842631",
+            appId: "1:91278842631:web:f81ca21bcc49a8542543a2",
+            measurementId: "G-ZR5W9JRQ3P"
+        };
+        firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore()
+    </script>
     <script src="./Js/Index.js"></script>
 </body>
 
