@@ -73,6 +73,65 @@ header{
     font-size: 25px;
 }
 
+.fa-cart-shopping{
+    position: relative;
+    cursor: pointer;
+}
+
+.count-shopping-cart{
+    position: absolute;
+    background-color: red;
+    color: #fff;
+    width: 25px;
+    height: 25px;
+    top: 25px; right: 75px; 
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.count-shopping-cart span{
+    font-size: 12.5px;
+    color: white;
+}
+
+.card-container-shopping-cart{
+    position: absolute;
+    background-color: white;
+    top: 100px; right:0;
+    width: 400px;
+    height: auto;
+    padding: 20px;
+    border-top: var(--border);
+    box-shadow: var(--box-shadow);
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+}
+
+.hidden-cart-shopping{
+    display: none;
+}
+
+.cart-total{
+    visibility: visible;
+}
+
+.cart-total.hidden{
+    opacity: 1;
+    visibility: hidden;
+}
+
+.cart-empty{
+    opacity: 1;
+    visibility: hidden;
+}
+
+.cart-empty.hidden{
+    visibility: visible;
+}
+
 .header-two{
     background-color: white;
     box-shadow: var(--box-shadow);
@@ -103,6 +162,11 @@ header{
 
 .open, .close{
     display: none;
+}
+
+main{
+    width: 100vw;
+    padding-top: 100px;
 }
 
 .home{
@@ -250,8 +314,15 @@ h2{
     padding-bottom: 10px;
 }
 
+.all-trips .filters{
+    width: 20%;
+}
 
-
+.all-trips .card-container-all-trips{
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+}
 
 
 .newslatter{

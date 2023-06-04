@@ -22,11 +22,27 @@
         <section class="header-one">
             <div class="search">
                 <i class="fa-solid fa-magnifying-glass"></i>
-                <input type="search" placeholder="Busca aquí...">
+                <input type="search" id="inputSearch" placeholder="Busca aquí...">
             </div>
             <div class="icons-search">
                 <i class="fa-solid fa-user"></i>
                 <i class="fa-solid fa-cart-shopping"></i>
+                <div class="count-shopping-cart">
+                    <span class="products-count-shopping-cart">0</span>
+                </div>
+
+
+                <div class="card-container-shopping-cart hidden-cart-shopping">
+                    <h2>CARRITO</h2>
+                    <button class="all-product-delete"><i class="fa-solid fa-trash-can">Borrar Todo</i></button>
+                    <div class="row-shopping-cart hidden">
+                    </div>
+                    <div class="cart-total hidden">
+                        <h3>Total</h3>
+                        <span class="total"></span>
+                    </div>
+                    <p class="cart-empty hidden">Tu Carrito Está Vacío :(</p>
+                </div>
             </div>
         </section>
         <section class="header-two">
@@ -207,23 +223,27 @@
             <input type="email" name="" id="" placeholder="Ingresa tu email..">
             <button>Suscribite</button>
         </section>
-        
+
         <section class="all-trips" id="all-trips">
             <div class="filters">
                 <h3>FILTRAR POR:</h3>
                 <button class="acordeon">
                     <h3>PROVINCIA<i class="fa-solid fa-chevron-down"></i></h3>
-                    <div class="category" id="category">
-                        <label><input type="checkbox" value="Carrera">Carrera</label>
-                        <label><input type="checkbox" value="Concierto de Música">Concierto de Música</label>
-                        <label><input type="checkbox" value="Feria de Comida">Feria de Comida</label>
-                        <label><input type="checkbox" value="Fiesta de Disfraces">Fiesta de Disfraces</label>
-                        <label><input type="checkbox" value="Intercambio de Libros">Intercambio de Libros</label>
-                        <label><input type="checkbox" value="Salida al museo">Salida al Museo</label>
-                        <label><input type="checkbox" value="Vamos al Cine">Vamos al Cine</label>
+                    <div class="category" id="category"><!-- 
+                        <label><input type="checkbox" value="Buenos Aires">Buenos Aires</label>
+                        <label><input type="checkbox" value="Chubut">Chubut</label>
+                        <label><input type="checkbox" value="Córdona">Córdona</label>
+                        <label><input type="checkbox" value="Mendoza">Mendoza</label>
+                        <label><input type="checkbox" value="Misiones">Misiones</label>
+                        <label><input type="checkbox" value="Río Negro">Río Negro</label>
+                        <label><input type="checkbox" value="Salta">Salta</label>
+                        <label><input type="checkbox" value="San Miguel de Tucumán">San Miguel de Tucumán</label>
+                        <label><input type="checkbox" value="San Salvador de Jujuy">San Salvador de Jujuy</label>
+                        <label><input type="checkbox" value="Santa Cruz">Santa Cruz</label>
+                        <label><input type="checkbox" value="Santa Fé">Santa Fé</label>
+                        <label><input type="checkbox" value="Tierra del Fuego">Tierra del Fuego</label> -->
                     </div>
                 </button>
-
             </div>
             <div class="card-container-all-trips" id="card-container-all-trips">
                 <h1 class="loading">Carganado Viajes...</h1>
