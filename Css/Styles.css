@@ -34,9 +34,9 @@ header{
     align-items: center;
 }
 
-.header-one{
-    background-color: black;
-}
+/* .header-one{
+    background-color: black; 
+}*/
 
 .header-one .search{
     background-color: white;

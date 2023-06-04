@@ -1,21 +1,4 @@
 let viajes;
-let navViajes = document.getElementsByClassName("navLink");
-let tarjetasViajes = document.getElementById("card-container-all-trips")
-let home = document.getElementById("home")
-let whyUs = document.getElementById("why-us")
-let recommendedTrips = document.getElementById("recommended-trips")
-let tripsByRegion = document.getElementById("trips-by-region")
-let tripsByProvince = document.getElementById("trips-by-province")
-let subscriptionsTrips = document.getElementById("subscriptions-trips")
-let newslatter = document.getElementById("newslatter")
-let allTrips = document.getElementById("all-trips")
-let contact = document.getElementById("contact")
-let blog = document.getElementById("blog")
-
-let inputSearch = document.getElementById("inputSearch")
-let search = ""
-let checkedCheckboxes = []
-let arrayFiltro = []
 
 function infoViajes() {
 
@@ -34,10 +17,32 @@ function infoViajes() {
     
     console.log ('guasfdiuasgfkjghfkj')
     console.log("viajes",dataApi);
+
+    rutas()
+
    })
 }
 
    infoViajes()
+
+   let navViajes = document.getElementsByClassName("navLink");
+   let tarjetasViajes = document.getElementById("card-container-all-trips")
+   let home = document.getElementById("home")
+   let whyUs = document.getElementById("why-us")
+   let recommendedTrips = document.getElementById("recommended-trips")
+   let tripsByRegion = document.getElementById("trips-by-region")
+   let tripsByProvince = document.getElementById("trips-by-province")
+   let subscriptionsTrips = document.getElementById("subscriptions-trips")
+   let newslatter = document.getElementById("newslatter")
+   let allTrips = document.getElementById("all-trips")
+   let contact = document.getElementById("contact")
+   let blog = document.getElementById("blog")
+   let filtroRegion = document.getElementById("ard-container-trips-by-region")
+   
+   let inputSearch = document.getElementById("inputSearch")
+   let search = ""
+   let checkedCheckboxes = []
+   let arrayFiltro = []
 
 // MENU DESPLEGABLE
 
@@ -61,7 +66,6 @@ for (var i = 0; i < navViajes.length; i++) {
         imprimir(e.target.id)
     })
 }
-
 
 async function imprimir(id) {
     console.log(id)
@@ -195,7 +199,7 @@ function pintarHTML(array) {
                 <p>Centro Cívico Bariloche, Cerro Campanario - Cerro Catedral, Teleférico Cerro Otto - Parque
                     Nacional Nahuel Huapi.</p>
                 <p class="product-price">Precio por Noche/Persona: $${array[i].Precio}</p>
-                <button>Ver Detalles</button>
+                <button><a href="./Html/Details.html?=id${array[i].Id}">VER DETALLE</a></button>
                 <button class="btn-add-cart" id="btn-add-cart">Agregar al Carrito</button>
             </div>
         `
@@ -207,40 +211,59 @@ function pintarHTML(array) {
 
 // NAV PÁGINA DETALLES
 
-// function rutas() {
+function rutas() {
 
-//     var page = location.search.split("?page=");
+    var page = location.search.split("?page=");
 
-//     console.log(page[1]);
+    console.log(page);
 
-//     switch (page[1]) {
+    switch (page[1]) {
 
-//         case "viajesArgentina": 
-//             imprimir("viajesArgentina")
-//             console.log("Entre a viajesArgentina")
-//             break;
-//         case "norte": imprimir("norte")
-//             console.log("Entre a norte")
-//             break;
-//         case "centro": imprimir("centro")
-//             console.log("Entre a centro")
-//             break;
-//         case "sur": imprimir("sur")
-//             console.log("Entre a sur")
-//             break;
-//         case "contacto": imprimir("contacto")
-//             console.log("Entre a contacto")
-//             break;
-//         case "blog": imprimir("blog")
-//             console.log("Entre a blog")
-//             break;
-//         default: imprimir("inicio")
-//             console.log("Entre a inicio")
-//     }
+        case "viajesArgentina": 
+            imprimir("viajesArgentina")
+            console.log("Entre a viajesArgentina")
+            break;
+        case "norte": imprimir("norte")
+            console.log("Entre a norte")
+            break;
+        case "centro": imprimir("centro")
+            console.log("Entre a centro")
+            break;
+        case "sur": imprimir("sur")
+            console.log("Entre a sur")
+            break;
+        case "contacto": imprimir("contacto")
+            console.log("Entre a contacto")
+            break;
+        case "blog": imprimir("blog")
+            console.log("Entre a blog")
+            break;
+        default: imprimir("inicio")
+            console.log("Entre a inicio")
+    }
 
-// }
+}
 
-//CARRITO DE COMPRAS 
+//FILTRO REGION
+
+for (let i = 0; i < filtroRegion.length; i++) {
+    let elementosRegion = filtroRegion[i];
+    elementosRegion.addEventListener("click", function (e) {
+        if (e.target.parentElement.id == "norte") {
+            imprimir("norte")
+        }
+        else if (e.target.parentElement.id == "centro") {
+            imprimir("centro")
+        }
+
+        else {
+            imprimir("sur")
+        }
+    })
+
+}
+
+//CARRITO DE COMPRAS
 
 const btnCart = document.querySelector('.fa-cart-shopping');
 const cardContainerCartProducts = document.querySelector(".card-container-shopping-cart")
@@ -362,80 +385,80 @@ inputSearch.addEventListener("keyup", function (viajes) {
 
 let categories = viajes.map(evento.Ciudad)
 console.log(categories)
-// function eventsCategories(array) {
+function eventsCategories(array) {
     
-//     console.log(Ciudades)
-//     let unica = new Set(categories)
-//     let lastCategories = [...unica]
-//     let categoriasEventos = ""
-//     lastCategories.map(Ciudad =>
-//       categoriasEventos +=
-//       `
-//       <label><input type="checkbox" value="${Ciudad}"> ${Ciudad}</label>
-//       `
-//     )
-//     document.getElementById("category").innerHTML = categoriasEventos
-//     checkboxListener()
-//   }
+    console.log(Ciudades)
+    let unica = new Set(categories)
+    let lastCategories = [...unica]
+    let categoriasEventos = ""
+    lastCategories.map(Ciudad =>
+      categoriasEventos +=
+      `
+      <label><input type="checkbox" value="${Ciudad}"> ${Ciudad}</label>
+      `
+    )
+    document.getElementById("category").innerHTML = categoriasEventos
+    checkboxListener()
+  }
 
-// function eventsCategories() {
-//     let categoriasEventos = 
-//       `
-//       <label><input type="checkbox" value="Carrera">Carrera</label>
-//       <label><input type="checkbox" value="Concierto de Música">Concierto de Música</label>
-//       <label><input type="checkbox" value="Feria de Comida">Feria de Comida</label>
-//       <label><input type="checkbox" value="Fiesta de Disfraces">Fiesta de Disfraces</label>
-//       <label><input type="checkbox" value="Intercambio de Libros">Intercambio de Libros</label>
-//       <label><input type="checkbox" value="Salida al Museo">Salida al Museo</label>
-//       <label><input type="checkbox" value="Vamos al Cine">Vamos al Cine</label>
-//       `
-//     document.getElementById("category").innerHTML = categoriasEventos
-//     checkboxListener()
-//   }
+function eventsCategories() {
+    let categoriasEventos = 
+      `
+      <label><input type="checkbox" value="Carrera">Carrera</label>
+      <label><input type="checkbox" value="Concierto de Música">Concierto de Música</label>
+      <label><input type="checkbox" value="Feria de Comida">Feria de Comida</label>
+      <label><input type="checkbox" value="Fiesta de Disfraces">Fiesta de Disfraces</label>
+      <label><input type="checkbox" value="Intercambio de Libros">Intercambio de Libros</label>
+      <label><input type="checkbox" value="Salida al Museo">Salida al Museo</label>
+      <label><input type="checkbox" value="Vamos al Cine">Vamos al Cine</label>
+      `
+    document.getElementById("category").innerHTML = categoriasEventos
+    checkboxListener()
+  }
 
-// function checkboxListener() {
-//     var checkboxs = document.querySelectorAll('input[type=checkbox]');
-//     for (i = 0; i < checkboxs.length; i++) {
-//         checkboxs[i].addEventListener("click", function () {
-//             checkedCheckboxes = []
-//             for (i = 0; i < checkboxs.length; i++) {
-//                 if (checkboxs[i].checked) {
-//                     checkedCheckboxes.push(checkboxs[i].value)
-//                 }
-//             }
-//             console.log(checkedCheckboxes);
-//             filtrosCombinados()
-//         })
-//     }
-// }
+function checkboxListener() {
+    var checkboxs = document.querySelectorAll('input[type=checkbox]');
+    for (i = 0; i < checkboxs.length; i++) {
+        checkboxs[i].addEventListener("click", function () {
+            checkedCheckboxes = []
+            for (i = 0; i < checkboxs.length; i++) {
+                if (checkboxs[i].checked) {
+                    checkedCheckboxes.push(checkboxs[i].value)
+                }
+            }
+            console.log(checkedCheckboxes);
+            filtrosCombinados()
+        })
+    }
+}
 
   
-// function filtrosCombinados() {
-//     var filtrado = []
-//     if (search !== "" && checkedCheckboxes.length > 0) {
-//       checkedCheckboxes.forEach(category => filtrado.push(...arrayFiltro.filter(viaje =>
-//         viaje.Ciudad.toLowerCase().trim().includes(search) && viaje.category === category)
-//       ))
-//     }
-//     else if (search !== "" && checkedCheckboxes.length == 0) {
-//       filtrado = arrayFiltro.filter(viaje => viaje.Ciudad.toLowerCase().trim().includes(search))
-//     }
-//     else if (search === "" && checkedCheckboxes.length > 0) {
-//       checkedCheckboxes.forEach(category =>
-//         filtrado.push(...arrayFiltro.filter(viaje => viaje.category === category))
-//       )
-//     }
-//     else {
-//       filtrado = arrayFiltro
-//     }
-//     filtrado.length > 0 ?
-//         pintarHTML(filtrado) :
-//         tarjetasViajes.innerHTML = `
-//             <div class="ceroResultado">
-//             <h1 class="sinviajess" >No se encontraron viajess para tu busqueda...</h1>
+function filtrosCombinados() {
+    var filtrado = []
+    if (search !== "" && checkedCheckboxes.length > 0) {
+      checkedCheckboxes.forEach(category => filtrado.push(...arrayFiltro.filter(viaje =>
+        viaje.Ciudad.toLowerCase().trim().includes(search) && viaje.category === category)
+      ))
+    }
+    else if (search !== "" && checkedCheckboxes.length == 0) {
+      filtrado = arrayFiltro.filter(viaje => viaje.Ciudad.toLowerCase().trim().includes(search))
+    }
+    else if (search === "" && checkedCheckboxes.length > 0) {
+      checkedCheckboxes.forEach(category =>
+        filtrado.push(...arrayFiltro.filter(viaje => viaje.category === category))
+      )
+    }
+    else {
+      filtrado = arrayFiltro
+    }
+    filtrado.length > 0 ?
+        pintarHTML(filtrado) :
+        tarjetasViajes.innerHTML = `
+            <div class="ceroResultado">
+            <h1 class="sinviajess" >No se encontraron viajess para tu busqueda...</h1>
             
             
-//             </div>
-//       `
-//       console.log(filtrado)
-//   }
+            </div>
+      `
+      console.log(filtrado)
+  }
