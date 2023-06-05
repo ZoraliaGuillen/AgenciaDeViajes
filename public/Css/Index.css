@@ -1,10 +1,7 @@
 :root{
-    --blue:#33658a;
-    --yellow:#f6ae2d;
-    --orange:#f26419;
-    --grey:#E1E1E1;
+    --grey:#CBCBCB;
     --box-shadow: 0 5px 2px -2px rgba(0,0,0,.25);
-    --border: 1px solid var(--grey);
+    --border: 1px solid #CBCBCB;
 }
 
 * {
@@ -16,7 +13,7 @@
     border: none; outline: none;
     list-style: none;
     text-decoration: none;
-    font-family: 'Rubik', sans-serif;
+    font-family: 'Geologica', sans-serif;
 }
 
 header{
@@ -27,7 +24,7 @@ header{
 
 .header-one, .header-two{
     height: 50px;
-    padding: 10px 100px;
+    padding: 10px 50px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -35,7 +32,7 @@ header{
 }
 
 .header-one{
-    background-color: black; 
+    background-color: var(--grey); 
 }
 
 .header-one .search{
@@ -123,6 +120,15 @@ header{
     visibility: hidden;
 }
 
+.all-product-delete{
+    visibility: visible;
+}
+
+.all-product-delete.hidden{
+    opacity: 1;
+    visibility: hidden;
+}
+
 .cart-empty{
     opacity: 1;
     visibility: hidden;
@@ -133,7 +139,7 @@ header{
 }
 
 .header-two{
-    background-color: white;
+    background-color: black;
     box-shadow: var(--box-shadow);
 }
 
@@ -145,11 +151,13 @@ header{
 }
 
 .header-two .title > h1{
+    color: white;
     font-size: 25px;
     font-weight: 700;
 }
 
 .header-two .title > i{
+    color: white;
     font-size: 25px;
 }
 
@@ -160,20 +168,23 @@ header{
     gap: 20px;
 }
 
+.header-two nav ul a {
+    
+    color: white;
+}
+
 .open, .close{
     display: none;
 }
 
-main{
-    width: 100vw;
-    padding-top: 100px;
-}
+
 
 .home{
     height: 100vh;
     width: 100%;
-    background-image: url(../Images/3333140.jpg);
+    background-image: url(../Images/43aa84f8e15b4b4762a829ffa210b394a2b59c58.jpg);
     background-size: cover;
+    background-position: center;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -182,7 +193,7 @@ main{
 
 .home .home-box{
     background-color: black;
-    width: 1000px;
+    width: 800px;
     height: 100px;
     padding: 10px;
 }
@@ -226,6 +237,9 @@ main{
     width: 100px;
 }
 
+
+
+
 h2{
     font-size: 25px;
     font-weight: 600;
@@ -234,7 +248,7 @@ h2{
 }
 
 .why-us, .recommended-trips, .trips-by-region{
-    padding: 0px 100px;
+    padding: 0px 50px;
     display: flex;
     flex-direction: column;
 }
@@ -279,14 +293,25 @@ h2{
 
 
 .card{
-    background-color: white;
-    width: 250px;
+    width: 300px;
+    border: var(--border);
+    border-radius: 25px;
 }
 
 .card img{
-    width: 250px;
+    position: relative;
+    width: 298px;
+    height: 200px;
+    border-radius: 22.5px 22.5px 0px 0px;
+    background-size: cover;
+    background-position: center;
+    
 }
 
+.card h3{
+    position: absolute;
+    top: 50px; right: 50px;
+}
 
 
 

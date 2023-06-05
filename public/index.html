@@ -8,12 +8,13 @@
     <link rel="icon" type="image/png" href="./Images/.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap"
+    <link
+        href="https://fonts.googleapis.com/css2?family=Geologica:wght@100;200;300;400;500;600;700;800;900&family=Rubik:wght@300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
         integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="./Css/Styles.css">
+    <link rel="stylesheet" href="./Css/Index.css">
     <title>Viajerisimo</title>
 </head>
 
@@ -30,16 +31,17 @@
                 <div class="count-shopping-cart">
                     <span class="products-count-shopping-cart">0</span>
                 </div>
-
-
                 <div class="card-container-shopping-cart hidden-cart-shopping">
                     <h2>CARRITO</h2>
-                    <button class="all-product-delete"><i class="fa-solid fa-trash-can">Borrar Todo</i></button>
+                    <button class="all-product-delete hidden"><i class="fa-solid fa-trash-can">Borrar Todo</i></button>
                     <div class="row-shopping-cart hidden">
                     </div>
                     <div class="cart-total hidden">
                         <h3>Total</h3>
                         <span class="total"></span>
+                    </div>
+                    <div>
+                        <button class="pay">PAGAR</button>
                     </div>
                     <p class="cart-empty hidden">Tu Carrito Está Vacío :(</p>
                 </div>
@@ -69,15 +71,20 @@
     <main>
         <section class="home" id="home">
             <div class="home-box">
-                <button><a href="./Html/Details.html">DETALLES</a></button>
                 <div class="flap">
                     <i class="fa-solid fa-suitcase-rolling"></i>
                     <h4>Viaje</h4>
                 </div>
                 <div class="row">
                     <div class="column">
-                        <label>Ciudad</label>
-                        <input type="text">
+                        <form action="">
+                            <label>Ciudad</label>
+                            <select name="" id="city">
+                                <option value="">Seleccionar</option>
+                                <option value="Bariloche">Bariloche</option>
+                                <option value="ca">Calafate</option>
+                            </select>
+                        </form>
                     </div>
                     <div class="column">
                         <label>Fecha Llegada / Fecha Salida</label>
@@ -123,9 +130,6 @@
                 <div class="card">
                     <img src="./Images/1.png" alt="">
                     <h3>Bariloche</h3>
-                    <p>Lugares a Visitar:</p>
-                    <p>Centro Cívico Bariloche, Cerro Campanario - Cerro Catedral, Teleférico Cerro Otto - Parque
-                        Nacional Nahuel Huapi.</p>
                     <div>
                         <p>Precio por Noche/Persona: $</p>
                         <button>Ver Detalles</button>
@@ -134,8 +138,6 @@
                 <div class="card">
                     <img src="./Images/3.png" alt="">
                     <h3>Capital Federal</h3>
-                    <p>Lugares a Visitar:</p>
-                    <p>Centro - Obelisco, Casa Rosada - Plaza de Mayo, Puerto Madero - Puente de la Mujer.</p>
                     <div>
                         <p>Precio por Noche/Persona: $</p>
                         <button>Ver Detalles</button>
@@ -144,8 +146,6 @@
                 <div class="card">
                     <img src="./Images/4.png" alt="">
                     <h3>Cataratas de Iguazú</h3>
-                    <p>Lugares a Visitar:</p>
-                    <p>Centro, Triple Frontera, Parque Nacional Iguazú.</p>
                     <div>
                         <p>Precio por Noche/Persona: $</p>
                         <button>Ver Detalles</button>
@@ -154,8 +154,6 @@
                 <div class="card">
                     <img src="./Images/9.png" alt="">
                     <h3>Mendoza</h3>
-                    <p>Lugares a Visitar:</p>
-                    <p>Bodegas de Mendoza, Cerro de los Siete Colores, Parque Provincial Aconcagua.</p>
                     <div>
                         <p>Precio por Noche/Persona: $</p>
                         <button>Ver Detalles</button>
@@ -179,7 +177,7 @@
                     <h3>SUR</h3>
                 </div>
             </div>
-       </section>
+        </section>
         <section class="trips-by-province" id="trips-by-province">
             <p>Río Negro</p>
             <p>Santa Cruz</p>

@@ -1,11 +1,11 @@
 let viajes;
 
-function infoViajes() {
+async function infoViajes() {
 
      const viajerisimo = firebase.firestore().collection("viajes"); 
     
      let dataApi=[]
-     viajerisimo.get()
+     await viajerisimo.get()
      .then((results) => {
     
       const data = results.docs.map((doc) => ({
@@ -15,34 +15,35 @@ function infoViajes() {
       dataApi.push(...data)
       viajes = dataApi
     
-    console.log ('guasfdiuasgfkjghfkj')
     console.log("viajes",dataApi);
 
     rutas()
+    imprimir()
+    imprimirDos()
 
    })
 }
 
    infoViajes()
 
-   let navViajes = document.getElementsByClassName("navLink");
-   let tarjetasViajes = document.getElementById("card-container-all-trips")
-   let home = document.getElementById("home")
-   let whyUs = document.getElementById("why-us")
-   let recommendedTrips = document.getElementById("recommended-trips")
-   let tripsByRegion = document.getElementById("trips-by-region")
-   let tripsByProvince = document.getElementById("trips-by-province")
-   let subscriptionsTrips = document.getElementById("subscriptions-trips")
-   let newslatter = document.getElementById("newslatter")
-   let allTrips = document.getElementById("all-trips")
-   let contact = document.getElementById("contact")
-   let blog = document.getElementById("blog")
-   let filtroRegion = document.getElementById("ard-container-trips-by-region")
+let navViajes = document.getElementsByClassName("navLink");
+let tarjetasViajes = document.getElementById("card-container-all-trips")
+let home = document.getElementById("home")
+let whyUs = document.getElementById("why-us")
+let recommendedTrips = document.getElementById("recommended-trips")
+let tripsByRegion = document.getElementById("trips-by-region")
+let tripsByProvince = document.getElementById("trips-by-province")
+let subscriptionsTrips = document.getElementById("subscriptions-trips")
+let newslatter = document.getElementById("newslatter")
+let allTrips = document.getElementById("all-trips")
+let contact = document.getElementById("contact")
+let blog = document.getElementById("blog")
+let filtroRegion = document.getElementById("ard-container-trips-by-region")
    
-   let inputSearch = document.getElementById("inputSearch")
-   let search = ""
-   let checkedCheckboxes = []
-   let arrayFiltro = []
+let inputSearch = document.getElementById("inputSearch")
+let search = ""
+let checkedCheckboxes = []
+let arrayFiltro = []
 
 // MENU DESPLEGABLE
 
@@ -214,7 +215,6 @@ function pintarHTML(array) {
 function rutas() {
 
     var page = location.search.split("?page=");
-
     console.log(page);
 
     switch (page[1]) {
@@ -243,6 +243,58 @@ function rutas() {
     }
 
 }
+
+select = document.getElementById('city')
+value = select.options[select.selectedIndex].value
+console.log(value)
+
+for (var i = 0; i < select.length; i++) {
+    var element = select[i];
+    element.addEventListener("click", function (e) {
+        imprimirDos(e.target.value)
+    })
+}
+
+async function imprimirDos(value) {
+    console.log(value)
+    switch (value) {
+
+        case "Bariloche":
+            let bariloche = viajes.filter(viajes => viajes.Ciudad == "Bariloche");
+            home.style.display = "none"
+            whyUs.style.display = "none"
+            recommendedTrips.style.display = "none"
+            tripsByRegion.style.display = "none"
+            tripsByProvince.style.display = "none"
+            subscriptionsTrips.style.display = "none"
+            newslatter.style.display = "none"
+            allTrips.style.display = "flex"
+            contact.style.display = "none"
+            blog.style.display = "none"
+            arrayFiltro = viajesArgentina
+            inputSearch.value = ""
+            checkedCheckboxes =[]
+            pintarHTML(bariloche)
+            break;
+            
+            default:
+                let calafate = viajes.filter(viajes => viajes.Ciudad == "Calafate");
+                home.style.display = "none"
+                whyUs.style.display = "none"
+                recommendedTrips.style.display = "none"
+                tripsByRegion.style.display = "none"
+                tripsByProvince.style.display = "none"
+                subscriptionsTrips.style.display = "none"
+                newslatter.style.display = "none"
+                allTrips.style.display = "flex"
+                contact.style.display = "none"
+                blog.style.display = "none"
+                arrayFiltro = viajesArgentina
+                inputSearch.value = ""
+                checkedCheckboxes =[]
+                pintarHTML(calafate)
+        }
+    }
 
 //FILTRO REGION
 
@@ -278,8 +330,10 @@ const cardContainerAllTrips = document.querySelector(".card-container-all-trips"
 let allProducts = []
 const totalValue = document.querySelector('.total')
 const totalCountProducts = document.querySelector('.products-count-shopping-cart')
+const allProductDelete = document.querySelector('.all-product-delete')
 const cartEmpty = document.querySelector('.cart-empty')
 const cartTotal = document.querySelector('.cart-total')
+const pay = document.querySelector('.pay')
 
 cardContainerAllTrips.addEventListener('click', e => {
     if (e.target.classList.contains('btn-add-cart')) {
@@ -329,9 +383,11 @@ rowShoppingCart.addEventListener('click', e => {
 
 const showHTML = () => {
     if (!allProducts.length) {
+        allProductDelete.classList.add('hidden');
 		cartTotal.classList.add('hidden');
 		cartEmpty.classList.add('hidden');
 	} else {
+        allProductDelete.classList.remove('hidden');
 		cartTotal.classList.remove('hidden');
 		cartEmpty.classList.remove('hidden');
 	}
