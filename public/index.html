@@ -40,9 +40,6 @@
                         <h3>Total</h3>
                         <span class="total"></span>
                     </div>
-                    <div>
-                        <button class="pay">PAGAR</button>
-                    </div>
                     <p class="cart-empty hidden">Tu Carrito Está Vacío :(</p>
                 </div>
             </div>
@@ -129,34 +126,42 @@
             <div class="card-container-recommended-trips">
                 <div class="card">
                     <img src="./Images/1.png" alt="">
-                    <h3>Bariloche</h3>
+                    <div class="position">
+                        <h3 class="product-name">Bariloche</h3>
+                        <button><a href="./Html/Details.html?=id${array[i].Id}">VER DETALLE</a></button>
+                    </div>
                     <div>
-                        <p>Precio por Noche/Persona: $</p>
-                        <button>Ver Detalles</button>
+                        <p class="product-price">Precio por Noche/Persona: $300</p>
                     </div>
                 </div>
                 <div class="card">
                     <img src="./Images/3.png" alt="">
-                    <h3>Capital Federal</h3>
+                    <div class="position">
+                        <h3 class="product-name">Capital Federal</h3>
+                        <button><a href="./Html/Details.html?=id${array[i].Id}">VER DETALLE</a></button>
+                    </div>
                     <div>
-                        <p>Precio por Noche/Persona: $</p>
-                        <button>Ver Detalles</button>
+                        <p>Precio por Noche/Persona: $180</p>
                     </div>
                 </div>
                 <div class="card">
                     <img src="./Images/4.png" alt="">
-                    <h3>Cataratas de Iguazú</h3>
+                    <div class="position">
+                        <h3 class="product-name">Cataratas de Iguazú</h3>
+                        <button><a href="./Html/Details.html?=id${array[i].Id}">VER DETALLE</a></button>
+                    </div>
                     <div>
-                        <p>Precio por Noche/Persona: $</p>
-                        <button>Ver Detalles</button>
+                        <p>Precio por Noche/Persona: $370</p>
                     </div>
                 </div>
                 <div class="card">
                     <img src="./Images/9.png" alt="">
-                    <h3>Mendoza</h3>
+                    <div class="position">
+                        <h3 class="product-name">Mendoza</h3>
+                        <button><a href="./Html/Details.html?=id${array[i].Id}">VER DETALLE</a></button>
+                    </div>
                     <div>
-                        <p>Precio por Noche/Persona: $</p>
-                        <button>Ver Detalles</button>
+                        <p>Precio por Noche/Persona: $490</p>
                     </div>
                 </div>
             </div>
@@ -164,55 +169,44 @@
         <section class="trips-by-region" id="trips-by-region">
             <h2>Descubre los Viajes por Región</h2>
             <div class="card-container-trips-by-region">
-                <div class="norte" id="norte">
+                <div class="position" id="norte">
                     <img src="./Images/NORTE.png" alt="">
                     <h3>NORTE</h3>
                 </div>
-                <div>
+                <div class="position">
                     <img src="./Images/CENTRO.png" alt="">
                     <h3>CENTRO</h3>
                 </div>
-                <div>
+                <div class="position">
                     <img src="./Images/SUR.png" alt="">
                     <h3>SUR</h3>
                 </div>
             </div>
         </section>
-        <section class="trips-by-province" id="trips-by-province">
-            <p>Río Negro</p>
-            <p>Santa Cruz</p>
-            <p>Buenos Aires</p>
-            <p>Misiones</p>
-            <p>Córdoba</p>
-            <p>San Salvador de Jujuy</p>
-            <p>Mendoza</p>
-            <p>Chubut</p>
-            <p>Salta</p>
-            <p>Santa Fé</p>
-            <p>San Miguel de Tucumán</p>
-            <p>Tierra Del Fuego</p>
-        </section>
         <section class="subscriptions-trips" id="subscriptions-trips">
-            <div>
-                <h3>Viajero Basic</h3>
-                <p>A partir de 500 millas por año, obten un 5% de descuento.</p>
-                <img src="" alt="">
-                <p>Precio</p>
-                <button>Subscribirse</button>
-            </div>
-            <div>
-                <h3>Viajero Standard</h3>
-                <p>A partir de 1.000 millas por año, obten un 10% de descuento.</p>
-                <img src="" alt="">
-                <p>Precio</p>
-                <button>Subscribirse</button>
-            </div>
-            <div>
-                <h3>Viajero Premium</h3>
-                <p>A partir de 1.500 millas por año, obten un 15% de descuento.</p>
-                <img src="" alt="">
-                <p>Precio</p>
-                <button>Subscribirse</button>
+            <h2>Subscripciones</h2>
+            <div class="card-container-subscriptions-trips">
+                <div class="card-subscriptions-trips">
+                    <h3>Viajero Basic</h3>
+                    <p>A partir de 500 millas por año, obten un 5% de descuento.</p>
+                    <img src="" alt="">
+                    <p>Precio</p>
+                    <button>Subscribirse</button>
+                </div>
+                <div class="card-subscriptions-trips">
+                    <h3>Viajero Standard</h3>
+                    <p>A partir de 1.000 millas por año, obten un 10% de descuento.</p>
+                    <img src="" alt="">
+                    <p>Precio</p>
+                    <button>Subscribirse</button>
+                </div>
+                <div class="card-subscriptions-trips">
+                    <h3>Viajero Premium</h3>
+                    <p>A partir de 1.500 millas por año, obten un 15% de descuento.</p>
+                    <img src="" alt="">
+                    <p>Precio</p>
+                    <button>Subscribirse</button>
+                </div>
             </div>
         </section>
         <section class="newslatter" id="newslatter">
@@ -227,7 +221,7 @@
                 <h3>FILTRAR POR:</h3>
                 <button class="acordeon">
                     <h3>PROVINCIA<i class="fa-solid fa-chevron-down"></i></h3>
-                    <div class="category" id="category"><!-- 
+                    <div class="category" id="category">
                         <label><input type="checkbox" value="Buenos Aires">Buenos Aires</label>
                         <label><input type="checkbox" value="Chubut">Chubut</label>
                         <label><input type="checkbox" value="Córdona">Córdona</label>
@@ -239,7 +233,7 @@
                         <label><input type="checkbox" value="San Salvador de Jujuy">San Salvador de Jujuy</label>
                         <label><input type="checkbox" value="Santa Cruz">Santa Cruz</label>
                         <label><input type="checkbox" value="Santa Fé">Santa Fé</label>
-                        <label><input type="checkbox" value="Tierra del Fuego">Tierra del Fuego</label> -->
+                        <label><input type="checkbox" value="Tierra del Fuego">Tierra del Fuego</label>
                     </div>
                 </button>
             </div>

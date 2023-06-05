@@ -16,6 +16,7 @@
     font-family: 'Geologica', sans-serif;
 }
 
+
 header{
     position: fixed;
     width: 100%;
@@ -32,7 +33,7 @@ header{
 }
 
 .header-one{
-    background-color: var(--grey); 
+    background-color: #111111; 
 }
 
 .header-one .search{
@@ -95,7 +96,7 @@ header{
 
 .card-container-shopping-cart{
     position: absolute;
-    background-color: white;
+    background-color: var(--grey);
     top: 100px; right:0;
     width: 400px;
     height: auto;
@@ -140,7 +141,6 @@ header{
 
 .header-two{
     background-color: black;
-    box-shadow: var(--box-shadow);
 }
 
 .header-two .title{
@@ -180,11 +180,11 @@ header{
 
 
 .home{
+    background-image: url(../Images/FondoViajerisimo.jpeg);
     height: 100vh;
     width: 100%;
-    background-image: url(../Images/43aa84f8e15b4b4762a829ffa210b394a2b59c58.jpg);
     background-size: cover;
-    background-position: center;
+    background-position: top;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -238,7 +238,11 @@ header{
 }
 
 
-
+.category{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
 
 h2{
     font-size: 25px;
@@ -247,14 +251,17 @@ h2{
     text-align: center;
 }
 
-.why-us, .recommended-trips, .trips-by-region{
-    padding: 0px 50px;
+.all-product-delete{
+    background-color: black;
+}
+
+.why-us, .recommended-trips, .trips-by-region, .subscriptions-trips{
+    padding: 25px 50px;
     display: flex;
     flex-direction: column;
 }
 
-.card-container-recommended-trips, .card-container-trips-by-region{
-    width: 100%;
+.card-container-recommended-trips, .card-container-trips-by-region, .card-container-subscriptions-trips{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -264,6 +271,7 @@ h2{
     display: flex;
     justify-content: space-between;
     align-items: center;
+
 }
 
 .why-us > div div{
@@ -289,17 +297,17 @@ h2{
     font-size: 35px;
 }
 
-
-
-
 .card{
+    background-color: white;
     width: 300px;
     border: var(--border);
     border-radius: 25px;
+    position: relative;
+    text-align: center;
 }
 
+
 .card img{
-    position: relative;
     width: 298px;
     height: 200px;
     border-radius: 22.5px 22.5px 0px 0px;
@@ -308,35 +316,51 @@ h2{
     
 }
 
-.card h3{
+.card .position{
     position: absolute;
-    top: 50px; right: 50px;
+    top: 125px; left: 10px;
+    text-align: left;
 }
 
+.card .position h3, .card-container-trips-by-region .position h3{
+    font-weight: 900;
+    font-size: 25px;
+    color: white;
+}
 
+.card p{
+    padding: 5px 10px;
+    text-align: left;
+}
+
+.card button{
+    background-color: black;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 15px;
+    margin-bottom: 10px;
+    margin-top: 5px;
+}
+
+.card button a{
+    color: white;
+}
 
 
 .trips-by-region > div img{
     width: 100%;
 }
 
-.subscriptions-trips {
+.card-subscriptions-trips{
+    width: 250px;
+    height: 300px;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 15px;
+    flex-direction: column;
+    border: var(--border);
 }
 
-.subscriptions-trips div{
-    width: 33%;
-    background-color: var(--grey);
-    margin: 0px 50px;
-    padding: 25px;
-}
-
-.subscriptions-trips div h3{
-    font-size: 25px;
-    padding-bottom: 10px;
+.all-trips{
+    padding: 125px 50px 25px 50px;
 }
 
 .all-trips .filters{
@@ -346,7 +370,9 @@ h2{
 .all-trips .card-container-all-trips{
     width: 80%;
     display: flex;
+    justify-content: space-between;
     flex-wrap: wrap;
+    gap: 15px;
 }
 
 
@@ -438,6 +464,8 @@ h2{
     padding: 5px;
     text-align: center;
 }
+
+
 
 
 @media (max-width:991px){
