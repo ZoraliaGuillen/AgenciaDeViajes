@@ -1,4 +1,4 @@
-let navViajes = document.getElementsByClassName("navLink");
+let navViajes = document.getElementsByClassName("navLink")
 let tarjetasViajes = document.getElementById("card-container-all-trips")
 let home = document.getElementById("home")
 let whyUs = document.getElementById("why-us")
@@ -17,9 +17,7 @@ let search = ""
 let checkedCheckboxes = []
 let arrayAFiltrar = []
 let ulNombreViajes = document.getElementById("viajes")
-
-
-let viajes;
+let viajes
 
 async function infoViajes() {
 
@@ -430,16 +428,16 @@ function checkboxListener() {
 function filtrosCombinados() {
     var filtrado = []
     if (search !== "" && checkedCheckboxes.length > 0) {
-        checkedCheckboxes.map(category => filtrado.push(...arrayAFiltrar.filter(viajes =>
-            viajes.name.toLowerCase().includes(search) && viajes.Provincia === category)
+        checkedCheckboxes.map(Provincia => filtrado.push(...arrayAFiltrar.filter(viajes =>
+            viajes.name.toLowerCase().includes(search) && viajes.Provincia === Provincia)
         ))
     }
     else if (search !== "" && checkedCheckboxes.length == 0) {
         filtrado = arrayAFiltrar.filter(viajes => viajes.name.toLowerCase().includes(search))
     }
     else if (search === "" && checkedCheckboxes.length > 0) {
-        checkedCheckboxes.map(category =>
-            filtrado.push(...arrayAFiltrar.filter(viajes => viajes.category === category))
+        checkedCheckboxes.map(Provincia =>
+            filtrado.push(...arrayAFiltrar.filter(viajes => viajes.Provincia === Provincia))
         )
     }
     else {
