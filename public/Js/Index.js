@@ -246,22 +246,22 @@ function rutas() {
 
 //FILTRO REGION
 
-for (let i = 0; i < filtroRegion.length; i++) {
-    let elementosRegion = filtroRegion[i];
-    elementosRegion.addEventListener("click", function (e) {
-        if (e.target.parentElement.id == "norte") {
-            imprimir("norte")
-        }
-        else if (e.target.parentElement.id == "centro") {
-            imprimir("centro")
-        }
+// for (let i = 0; i < filtroRegion.length; i++) {
+//     let elementosRegion = filtroRegion[i];
+//     elementosRegion.addEventListener("click", function (e) {
+//         if (e.target.parentElement.id == "norte") {
+//             imprimir("norte")
+//         }
+//         else if (e.target.parentElement.id == "centro") {
+//             imprimir("centro")
+//         }
 
-        else {
-            imprimir("sur")
-        }
-    })
+//         else {
+//             imprimir("sur")
+//         }
+//     })
 
-}
+// }
 
 //CARRITO DE COMPRAS
 
@@ -383,23 +383,23 @@ inputSearch.addEventListener("keyup", function (viajes) {
     console.log(search)
 })
 
-let categories = viajes.map(evento.Ciudad)
-console.log(categories)
-function eventsCategories(array) {
+// let categories = viajes.map(evento.Ciudad)
+// console.log(categories)
+// function eventsCategories(array) {
     
-    console.log(Ciudades)
-    let unica = new Set(categories)
-    let lastCategories = [...unica]
-    let categoriasEventos = ""
-    lastCategories.map(Ciudad =>
-      categoriasEventos +=
-      `
-      <label><input type="checkbox" value="${Ciudad}"> ${Ciudad}</label>
-      `
-    )
-    document.getElementById("category").innerHTML = categoriasEventos
-    checkboxListener()
-  }
+//     console.log(Ciudades)
+//     let unica = new Set(categories)
+//     let lastCategories = [...unica]
+//     let categoriasEventos = ""
+//     lastCategories.map(Ciudad =>
+//       categoriasEventos +=
+//       `
+//       <label><input type="checkbox" value="${Ciudad}"> ${Ciudad}</label>
+//       `
+//     )
+//     document.getElementById("category").innerHTML = categoriasEventos
+//     checkboxListener()
+//   }
 
 function eventsCategories() {
     let categoriasEventos = 
