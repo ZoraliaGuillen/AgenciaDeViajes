@@ -58,8 +58,8 @@
                     <li class="navLink"><a href="./index.html#norte" id="norte">NORTE</a></li>
                     <li class="navLink"><a href="./index.html#centro" id="centro">CENTRO</a></li>
                     <li class="navLink"><a href="./index.html#sur" id="sur">SUR</a></li>
-                    <li class="navLink"><a href="./index.html#contacto" id="contacto">CONTACTO</a></li>
-                    <li class="navLink"><a href="./index.html#blog" id="blog">BLOG</a></li>
+                    <li class="navLink"><a href="./index.html#contactopage" id="contactopage">CONTACTO</a></li>
+                    <li class="navLink"><a href="./index.html#blogpage" id="blogpage">BLOG</a></li>
                 </ul>
             </nav>
             <button class="open" id="open"><i class="fa-solid fa-bars"></i></button>
@@ -189,22 +189,22 @@
                 <div class="card-subscriptions-trips">
                     <h3>Viajero Basic</h3>
                     <p>A partir de 500 millas por año, obten un 5% de descuento.</p>
-                    <img src="" alt="">
-                    <p>Precio</p>
+                    <img src="Images/basico.jpg" alt="">
+                    <p>Precio: $50</p>
                     <button>Subscribirse</button>
                 </div>
                 <div class="card-subscriptions-trips">
                     <h3>Viajero Standard</h3>
                     <p>A partir de 1.000 millas por año, obten un 10% de descuento.</p>
-                    <img src="" alt="">
-                    <p>Precio</p>
+                    <img src="Images/standar.jpg" alt="">
+                    <p>Precio: $100</p>
                     <button>Subscribirse</button>
                 </div>
                 <div class="card-subscriptions-trips">
                     <h3>Viajero Premium</h3>
                     <p>A partir de 1.500 millas por año, obten un 15% de descuento.</p>
-                    <img src="" alt="">
-                    <p>Precio</p>
+                    <img src="Images/premium.jpg" alt="">
+                    <p>Precio: $200</p>
                     <button>Subscribirse</button>
                 </div>
             </div>
@@ -217,7 +217,7 @@
         </section>
 
         <section class="all-trips" id="all-trips">
-            <div class="filters">
+            <!-- <div class="filters">
                 <h3>FILTRAR POR:</h3>
                 <button class="acordeon">
                     <h3>PROVINCIA<i class="fa-solid fa-chevron-down"></i></h3>
@@ -236,11 +236,24 @@
                         <label><input type="checkbox" value="Tierra del Fuego">Tierra del Fuego</label>
                     </div>
                 </button>
+            </div> -->
+
+                    <!-- NUEVO -->
+        <section>
+            <div class="searchContainer" id="searchContainer">
+               <div class="checkbox-container" id="checkcategories"></div>
+               <div class="category" id="category">
+            </div>
+                <input type="text" id="inputSearch" placeholder="Busca tu destino favorito...">
             </div>
             <div class="card-container-all-trips" id="card-container-all-trips">
-                <h1 class="loading">Carganado Viajes...</h1>
+                <h3 class="loading">Cargando Viajes...</h3>
             </div>
+
+            <div class="all-trips" id="all-trips"></div>
         </section>
+
+
         <section class="blog" id="blog">
 
         </section>
