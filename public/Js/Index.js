@@ -12,11 +12,10 @@ let contact = document.getElementById("contact")
 let blog = document.getElementById("blog")
 let filtroRegion = document.getElementById("ard-container-trips-by-region")
 var searchContainer = document.getElementById("searchContainer")   
-let inputSearch = document.getElementById("inputSearch")
+let inputSearch = document.getElementById("inputSearchcontainer")
 let search = ""
 let checkedCheckboxes = []
 let arrayAFiltrar = []
-let ulNombreViajes = document.getElementById("viajes")
 let viajes
 
 async function infoViajes() {
@@ -81,14 +80,13 @@ async function imprimir(id) {
             allTrips.style.display = "flex"
             contact.style.display = "none"
             blog.style.display = "none"
-            arrayAFiltrar = viajesArgentina
+            arrayAFiltrar = viajes
             inputSearch.value = ""
             checkedCheckboxes =[]
             eventsCategories(viajes)
             console.log("entre a ViajesArgentina")
             pintarHTML(viajes)
             searchContainer.style.display = "flex"
-            ulNombreViajes.style.display ="flex"
             break;
         case "norte":
             let norte = viajes.filter(viajes => viajes.Region == "Norte");
@@ -108,7 +106,6 @@ async function imprimir(id) {
             console.log("entre a norte")
             pintarHTML(norte)
             searchContainer.style.display = "flex"
-            ulNombreViajes.style.display ="flex"
             break;
         case "centro":
             let centro = viajes.filter(viajes => viajes.Region == "Centro");
@@ -128,7 +125,6 @@ async function imprimir(id) {
             console.log("entre a centro")
             pintarHTML(centro)
             searchContainer.style.display = "flex"
-            ulNombreViajes.style.display ="flex"
             break;
         case "sur":
             let sur = viajes.filter(viajes => viajes.Region == "Sur");
@@ -147,7 +143,6 @@ async function imprimir(id) {
             console.log("entre a sur")            
             pintarHTML(sur)
             searchContainer.style.display = "flex"
-            ulNombreViajes.style.display ="flex"
             eventsCategories(sur)
             break;
         case "contactpage":
@@ -162,7 +157,6 @@ async function imprimir(id) {
             blog.style.display = "none"
             console.log("entre a contacto")
             searchContainer.style.display = "none"
-            ulNombreViajes.style.display ="noce"
             break;
         case "blogpage":
             home.style.display = "none"
@@ -173,10 +167,10 @@ async function imprimir(id) {
             newslatter.style.display = "none"
             allTrips.style.display = "none"
             contact.style.display = "none"
+            searchContainer.style.display = "none"
             blog.style.display = "flex"
             console.log("entre a blog")
-            searchContainer.style.display = "none"
-            ulNombreViajes.style.display ="none"
+            // pintarBlog()
             break;
         default:
             home.style.display = "flex"
@@ -375,26 +369,15 @@ btnClearAll.addEventListener('click', () => {
 inputSearch.addEventListener("keyup", function (viajes) {
     const datoInput = viajes.target.value
     search = datoInput.trim().toLowerCase()
-    console.log(search)
-})
-
-
-//FILTROS COMBINADOS
-
-inputSearch.addEventListener("keyup", function (viajes) {
-    var datoInput = viajes.target.value
-    search = datoInput.trim().toLowerCase()
     filtrosCombinados()
+    console.log(search)
 })
 
 //Creación dinámica de los checbox
 function eventsCategories(array) {
     let Provincia = array.map(viajes => viajes.Provincia)
-    console.log('imprimir provincia===> ', Provincia)
     let unica = new Set(Provincia)
-    console.log('Variable unica ==> ', unica)
     let lastCategories = [...unica]
-    console.log('variable lastCategorias ==> ', lastCategories)
     let categoriasViajes = ""
     lastCategories.map(Provincia =>
         categoriasViajes +=
@@ -429,11 +412,13 @@ function filtrosCombinados() {
     var filtrado = []
     if (search !== "" && checkedCheckboxes.length > 0) {
         checkedCheckboxes.map(Provincia => filtrado.push(...arrayAFiltrar.filter(viajes =>
-            viajes.name.toLowerCase().includes(search) && viajes.Provincia === Provincia)
+            viajes.Provincia.toLowerCase().includes(search) && viajes.Provincia === Provincia)
         ))
     }
     else if (search !== "" && checkedCheckboxes.length == 0) {
-        filtrado = arrayAFiltrar.filter(viajes => viajes.name.toLowerCase().includes(search))
+       filtrado = arrayAFiltrar.filter(viajes => viajes.Provincia.toLowerCase().includes(search))
+       console.log(filtrado)
+
     }
     else if (search === "" && checkedCheckboxes.length > 0) {
         checkedCheckboxes.map(Provincia =>
@@ -443,9 +428,8 @@ function filtrosCombinados() {
     else {
         filtrado = arrayAFiltrar
     }
+    console.log(filtrado)
     filtrado.length > 0 ? 
-    showHTML(filtrado) :
-    document.getElementById("viajes").innerHTML=""
-    ulNombreViajes.innerHTML = `<h1 class="ceroResult"> No se encontraron viajes para tu búsqueda </h1>`
+    pintarHTML(filtrado) :
+    tarjetasViajes.innerHTML = `<h1 class="ceroResult"> No se encontraron viajes para tu búsqueda </h1>`
 }
-
