@@ -62,16 +62,36 @@
                     <p class="cart-empty hidden">Tu Carrito Está Vacío :(</p>
                 </div>
                 <dialog class="modal" id="modal">
-                    <div>
-                        <p>¡Hola!</p>
+                    <div class="modal-title">
+                        <h3>Pagar con Tarjeta de Crédito / Débito</h3>
                         <button id="closeModal"><i class="fa-solid fa-x"></i></button>
                     </div>
                     <div>
-                        <div>
-
-                        </div>
+                        <p>Introduce los Datos de la Forma de Pago</p>
+                        <form action="">
+                            <label for="">Nombre y Apellido del Titular</label>
+                            <div>
+                                <i class="fa-solid fa-user"></i>
+                                <input type="text">
+                            </div>
+                            <label for="">N° de Tarjeta</label>
+                            <div>
+                                <i class="fa-solid fa-credit-card"></i>
+                                <input type="number">
+                            </div>
+                            <label for="">Fecha de Vencimiento de Tarjeta</label>
+                            <div>
+                                <i class="fa-solid fa-calendar-days"></i>
+                                <input type="date">
+                            </div>
+                            <label for="">CVV de Tarjeta</label>
+                            <div>
+                                <i class="fa-solid fa-lock"></i>
+                                <input type="number">
+                            </div>
+                        </form>
                     </div>
-                </div>
+            </div>
             </div>
             </div>
         </section>
@@ -122,8 +142,36 @@
                         <input id="inputNumber" type="number" value="1" min="1">
                     </div>
                     <button id="botonBuscar">Buscar</button>
-                    <button type="submit">
                 </form>
+        </section>
+        <section class="why-us" id="why-us">
+            <h2>¿POR QUÉ ELEGIRNOS?</h2>
+            <div>
+                <div>
+                    <div>
+                        <i class="fa-solid fa-money-bill-wave"></i>
+                    </div>
+                    <h3>El Mejor Precio</h3>
+                </div>
+                <div>
+                    <div>
+                        <i class="fa-solid fa-plane-departure"></i>
+                    </div>
+                    <h3>Viajes a Tu Medida</h3>
+                </div>
+                <div>
+                    <div>
+                        <i class="fa-solid fa-user-shield"></i>
+                    </div>
+                    <h3>Seguro de Viaje</h3>
+                </div>
+                <div>
+                    <div>
+                        <i class="fa-solid fa-headset"></i>
+                    </div>
+                    <h3>Asesores Expertos</h3>
+                </div>
+            </div>
         </section>
         <section class="recommended-trips" id="recommended-trips">
             <h2>VIAJES RECOMENDADOS</h2>
@@ -137,7 +185,7 @@
                     <div>
                         <p>Lugares A Vistar: Centro, Centro Cívico Bariloche, Cerro Campanario, Cerro Catedral,
                             Teleférico Cerro Otto, Parque Nacional Nahuel Huap.</p>
-                        <p class="product-price">Precio por Noche/Persona: $300</p>
+                        <p class="product-price">Precio por Noche/Persona: <span>$300</span></p>
                     </div>
                 </div>
                 <div class="card">
@@ -149,7 +197,7 @@
                     <div>
                         <p>Lugares A Visitar: Centro, Obelisco, Teatro Colon, Casa Rosada, Plaza de Mayo, Puerto Madero,
                             Puente de la Mujer, Rosedal de Palermo, San Telmo, La Boca.</p>
-                        <p>Precio por Noche/Persona: $180</p>
+                        <p class="product-price">Precio por Noche/Persona: <span>$180</span></p>
                     </div>
                 </div>
                 <div class="card">
@@ -160,7 +208,7 @@
                     </div>
                     <div>
                         <p>Lugares A Visitar: Centro, Triple Frontera, Parque Nacional Iguazú</p>
-                        <p>Precio por Noche/Persona: $370</p>
+                        <p class="product-price">Precio por Noche/Persona: <span>$370</span></p>
                     </div>
                 </div>
                 <div class="card">
@@ -172,31 +220,8 @@
                     <div>
                         <p>Lugares A Visitar: Centro, Bodegas de Mendoza, Cerro de los Siete Colores, Parque provincial
                             Aconcagua.</p>
-                        <p>Precio por Noche/Persona: $490</p>
+                        <p class="product-price">Precio por Noche/Persona: <span>$490</span></p>
                     </div>
-                </div>
-            </div>
-        </section>
-        <section class="why-us" id="why-us">
-            <h2>¿POR QUÉ ELEGIRNOS?</h2>
-            <div>
-                <div>
-                    <div>
-                        <i class="fa-regular fa-credit-card"></i>
-                    </div>
-                    <h3>3 Cuotas Sin Interés</h3>
-                </div>
-                <div>
-                    <div>
-                        <i class="fa-solid fa-plane-departure"></i>
-                    </div>
-                    <h3>Seguro de Viaje</h3>
-                </div>
-                <div>
-                    <div>
-                        <i class="fa-solid fa-mask-face"></i>
-                    </div>
-                    <h3>Prueba PCR</h3>
                 </div>
             </div>
         </section>
@@ -222,23 +247,23 @@
             <div class="card-container-subscriptions-trips">
                 <div class="card-subscriptions-trips">
                     <h3>Viajero Basic</h3>
-                    <p>A partir de 500 millas por año, obten un 5% de descuento.</p>
-                    <img src="Images/basico.jpg" alt="">
-                    <p>Precio: $50</p>
+                    <p class="millas">A partir de 500 millas por año, obten un 5% de descuento.</p>
+                    <i class="fa-solid fa-car-side"></i>
+                    <p class="price">Precio: $50</p>
                     <button>Subscribirse</button>
                 </div>
                 <div class="card-subscriptions-trips">
                     <h3>Viajero Standard</h3>
-                    <p>A partir de 1.000 millas por año, obten un 10% de descuento.</p>
-                    <img src="Images/standar.jpg" alt="">
-                    <p>Precio: $100</p>
+                    <p class="millas">A partir de 1.000 millas por año, obten un 10% de descuento.</p>
+                    <i class="fa-solid fa-van-shuttle"></i>
+                    <p class="price">Precio: $100</p>
                     <button>Subscribirse</button>
                 </div>
                 <div class="card-subscriptions-trips">
                     <h3>Viajero Premium</h3>
-                    <p>A partir de 1.500 millas por año, obten un 15% de descuento.</p>
-                    <img src="Images/premium.jpg" alt="">
-                    <p>Precio: $200</p>
+                    <p class="millas">A partir de 1.500 millas por año, obten un 15% de descuento.</p>
+                    <i class="fa-solid fa-plane"></i>
+                    <p class="price">Precio: $200</p>
                     <button>Subscribirse</button>
                 </div>
             </div>
@@ -275,16 +300,15 @@
             <!-- NUEVO -->
             <section>
                 <div class="searchContainer" id="searchContainer">
-                    <div class="checkbox-container" id="checkcategories"></div>
-                    <div class="category" id="category">
+                    <div>
+                        <input type="text" id="inputSearchcontainer" placeholder="Busca tu destino favorito...">
                     </div>
-                    <input type="text" id="inputSearchcontainer" placeholder="Busca tu destino favorito...">
+                    <div class="checkbox-container" id="checkcategories"></div>
+                    <div class="category" id="category"></div>
                 </div>
                 <div class="card-container-all-trips" id="card-container-all-trips">
                     <h3 class="loading">Cargando Viajes...</h3>
                 </div>
-
-                <div class="all-trips" id="all-trips"></div>
             </section>
 
             <div id="viajes"></div>

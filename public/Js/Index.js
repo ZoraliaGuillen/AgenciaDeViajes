@@ -239,10 +239,8 @@ function pintarHTML(array) {
                 <h3 class="product-name">${array[i].Ciudad}</h3>
                 <button><a href="./Html/Details.html?=id${array[i].Id}">VER DETALLE</a></button>
                 </div>
-                <p>Lugares a Visitar:</p>
-                <p>Centro Cívico Bariloche, Cerro Campanario - Cerro Catedral, Teleférico Cerro Otto - Parque
-                    Nacional Nahuel Huapi.</p>
-                <p class="product-price">Precio por Noche/Persona: $${array[i].Precio*cantidadPasajeros}</p>
+                <p class="place">Lugares a Visitar: ${array[i].LugaresAVisitar}</p>
+                <p class="product-price">Precio por Noche/Persona: <span>$${array[i].Precio*cantidadPasajeros}</span></p>
                 <button class="btn-add-cart" id="btn-add-cart">Agregar al Carrito</button>
             </div>
         `
@@ -300,6 +298,7 @@ async function imprimirDos(value) {
             subscriptionsTrips.style.display = "none"
             newslatter.style.display = "none"
             allTrips.style.display = "flex"
+            searchContainer.style.display = "none"
             contact.style.display = "none"
             blog.style.display = "none"
             pintarHTML(bariloche)

@@ -57,15 +57,16 @@ console.log(viajes)
     var tarjetasViajesDetalles = document.getElementById("all-trips-details")
     tarjetasViajesDetalles.innerHTML = 
 
-    `<div class="cardContainerDetails">
-    <div class="imageCardDetails">
-        <i class="fa-solid fa-heart"></i>
+    `
+    <div class="card">
+        <img src="${detalles[0].Imagen}" alt="">
+    <div class="position">
+        <h3 class="product-name">${detalles[0].Ciudad}</h3>
+        <h4 class="product-pro">${detalles[0].Provincia}</h3>
+        </div>
+        <p class="place">Lugares a Visitar: ${detalles[0].LugaresAVisitar}</p>
+        <p class="product-price">Precio por Noche/Persona: <span>$${detalles[0].Precio}</span></p>
     </div>
-    <div class="cardDetails">
-        <h3 class="name">${detalles[0].Hotel}</h3>
-    </div>
-</div>
     `
 }
-
 

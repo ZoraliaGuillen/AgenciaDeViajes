@@ -20,14 +20,7 @@
 <body>
     <header>
         <section class="header-one">
-            <div class="search">
-                <i class="fa-solid fa-magnifying-glass"></i>
-                <input type="search" placeholder="Busca aquí...">
-            </div>
-            <div class="icons-search">
-                <i class="fa-solid fa-user"></i>
-                <i class="fa-solid fa-cart-shopping"></i>
-            </div>
+
         </section>
         <section class="header-two">
             <div class="title">
@@ -38,15 +31,67 @@
                 <ul class="nav">
                     <button class="close" id="close"><i class="fa-solid fa-xmark"></i></button>
                     <li class="navLink"><a href="../index.html?page=inicio" id="inicio">Inicio</a></li>
-                    <li class="navLink"><a href="../index.html?page=viajesArgentina" id="viajesArgentina">Vajes Por Argentina</a></li>
-                    <li class="navLink"><a href="../index.html?page=norte" id="norte">NORTE</a></li>
-                    <li class="navLink"><a href="../index.html?page=centro" id="centro">CENTRO</a></li>
-                    <li class="navLink"><a href="../index.html?page=sur" id="sur">SUR</a></li>
-                    <li class="navLink"><a href="../index.html?page=contactopage" id="contactopage">CONTACTO</a></li>
-                    <li class="navLink"><a href="../index.html?page=blogpage" id="blogpage">BLOG</a></li>
+                    <li class="navLink"><a href="../index.html?page=viajesArgentina" id="viajesArgentina">Viajes Por
+                            Argentina</a></li>
+                    <li class="navLink"><a href="../index.html?page=norte" id="norte">Norte</a></li>
+                    <li class="navLink"><a href="../index.html?page=centro" id="centro">Centro</a></li>
+                    <li class="navLink"><a href="../index.html?page=sur" id="sur">Sur</a></li>
+                    <li class="navLink"><a href="../index.html?page=contactopage" id="contactopage">Contacto</a></li>
+                    <li class="navLink"><a href="../index.html?page=blogpage" id="blogpage">Blog</a></li>
                 </ul>
             </nav>
-            <button c lass="open" id="open"><i class="fa-solid fa-bars"></i></button>
+            <div class="icons">
+                <button class="open" id="open"><i class="fa-solid fa-bars"></i></button>
+                <i class="fa-solid fa-user"></i>
+                <i class="fa-solid fa-cart-shopping"></i>
+                <div class="count-shopping-cart">
+                    <span class="products-count-shopping-cart">0</span>
+                </div>
+                <div class="card-container-shopping-cart hidden-cart-shopping">
+                    <h3>CARRITO</h3>
+                    <button class="all-product-delete hidden"><i class="fa-solid fa-trash-can">Borrar Todo</i></button>
+                    <div class="row-shopping-cart hidden">
+                    </div>
+                    <div class="cart-total hidden">
+                        <h3>Total</h3>
+                        <span class="total"></span>
+                        <button id="openModal">Pagar</button>
+                    </div>
+                    <p class="cart-empty hidden">Tu Carrito Está Vacío :(</p>
+                </div>
+                <dialog class="modal" id="modal">
+                    <div class="modal-title">
+                        <h3>Pagar con Tarjeta de Crédito / Débito</h3>
+                        <button id="closeModal"><i class="fa-solid fa-x"></i></button>
+                    </div>
+                    <div>
+                        <p>Introduce los Datos de la Forma de Pago</p>
+                        <form action="">
+                            <label for="">Nombre y Apellido del Titular</label>
+                            <div>
+                                <i class="fa-solid fa-user"></i>
+                                <input type="text">
+                            </div>
+                            <label for="">N° de Tarjeta</label>
+                            <div>
+                                <i class="fa-solid fa-credit-card"></i>
+                                <input type="number">
+                            </div>
+                            <label for="">Fecha de Vencimiento de Tarjeta</label>
+                            <div>
+                                <i class="fa-solid fa-calendar-days"></i>
+                                <input type="date">
+                            </div>
+                            <label for="">CVV de Tarjeta</label>
+                            <div>
+                                <i class="fa-solid fa-lock"></i>
+                                <input type="number">
+                            </div>
+                        </form>
+                    </div>
+            </div>
+            </div>
+            </div>
         </section>
     </header>
     <main>
@@ -106,4 +151,5 @@
         const db = firebase.firestore()
     </script>
     <script src="../Js/Details.js"></script>
+    <script src="../Js/Index.js"></script>
 </body>
