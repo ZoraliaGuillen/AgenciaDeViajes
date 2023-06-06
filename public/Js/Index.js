@@ -1,4 +1,5 @@
-let navViajes = document.getElementsByClassName("navLink")
+let viajes
+let navViajes = document.getElementsByClassName("navLink");
 let tarjetasViajes = document.getElementById("card-container-all-trips")
 let home = document.getElementById("home")
 let whyUs = document.getElementById("why-us")
@@ -12,11 +13,10 @@ let contact = document.getElementById("contact")
 let blog = document.getElementById("blog")
 let filtroRegion = document.getElementById("ard-container-trips-by-region")
 var searchContainer = document.getElementById("searchContainer")   
-let inputSearch = document.getElementById("inputSearchcontainer")
+let inputSearch = document.getElementById("inputSearch")
 let search = ""
 let checkedCheckboxes = []
-let arrayAFiltrar = []
-let viajes
+let arrayFiltro = []
 
 async function infoViajes() {
 
@@ -43,24 +43,11 @@ async function infoViajes() {
 
    infoViajes()
 
-let navViajes = document.getElementsByClassName("navLink");
-let tarjetasViajes = document.getElementById("card-container-all-trips")
-let home = document.getElementById("home")
-let whyUs = document.getElementById("why-us")
-let recommendedTrips = document.getElementById("recommended-trips")
-let tripsByRegion = document.getElementById("trips-by-region")
-let tripsByProvince = document.getElementById("trips-by-province")
-let subscriptionsTrips = document.getElementById("subscriptions-trips")
-let newslatter = document.getElementById("newslatter")
-let allTrips = document.getElementById("all-trips")
-let contact = document.getElementById("contact")
-let blog = document.getElementById("blog")
-let filtroRegion = document.getElementById("ard-container-trips-by-region")
-   
-let inputSearch = document.getElementById("inputSearch")
-let search = ""
-let checkedCheckboxes = []
-let arrayFiltro = []
+// MENU SCROLL
+window.addEventListener("scroll", function(){
+    var header = document.querySelector(".header-two")
+    header.classList.toggle("abajo", window.scrollY>0)
+})
 
 // MENU DESPLEGABLE
 
@@ -75,6 +62,7 @@ open.addEventListener("click", () => {
 close.addEventListener("click", () => {
     nav.classList.remove("visibility");
 })
+
 
 //NAV PÁGINAS
 
@@ -100,7 +88,6 @@ async function imprimir(id) {
             contact.style.display = "none"
             blog.style.display = "none"
             arrayAFiltrar = viajes
-            inputSearch.value = ""
             checkedCheckboxes =[]
             eventsCategories(viajes)
             console.log("entre a ViajesArgentina")
@@ -299,57 +286,39 @@ function rutas() {
 
 }
 
-// select = document.getElementById('city')
-// value = select.options[select.selectedIndex].value
-// console.log(value)
 
-// for (var i = 0; i < select.length; i++) {
-//     var element = select[i];
-//     element.addEventListener("click", function (e) {
-//         imprimirDos(e.target.value)
-//     })
-// }
+async function imprimirDos(value) {
+    console.log(value)
+    switch (value) {
 
-// async function imprimirDos(value) {
-//     console.log(value)
-//     switch (value) {
-
-//         case "Bariloche":
-//             let bariloche = viajes.filter(viajes => viajes.Ciudad == "Bariloche");
-//             home.style.display = "none"
-//             whyUs.style.display = "none"
-//             recommendedTrips.style.display = "none"
-//             tripsByRegion.style.display = "none"
-//             tripsByProvince.style.display = "none"
-//             subscriptionsTrips.style.display = "none"
-//             newslatter.style.display = "none"
-//             allTrips.style.display = "flex"
-//             contact.style.display = "none"
-//             blog.style.display = "none"
-//             arrayFiltro = viajesArgentina
-//             inputSearch.value = ""
-//             checkedCheckboxes =[]
-//             pintarHTML(bariloche)
-//             break;
+        case "Bariloche":
+            let bariloche = viajes.filter(viajes => viajes.Ciudad == "Bariloche");
+            home.style.display = "none"
+            whyUs.style.display = "none"
+            recommendedTrips.style.display = "none"
+            tripsByRegion.style.display = "none"
+            subscriptionsTrips.style.display = "none"
+            newslatter.style.display = "none"
+            allTrips.style.display = "flex"
+            contact.style.display = "none"
+            blog.style.display = "none"
+            pintarHTML(bariloche)
+            break;
             
-//             default:
-//                 let calafate = viajes.filter(viajes => viajes.Ciudad == "Calafate");
-//                 home.style.display = "none"
-//                 whyUs.style.display = "none"
-//                 recommendedTrips.style.display = "none"
-//                 tripsByRegion.style.display = "none"
-//                 tripsByProvince.style.display = "none"
-//                 subscriptionsTrips.style.display = "none"
-//                 newslatter.style.display = "none"
-//                 allTrips.style.display = "flex"
-//                 contact.style.display = "none"
-//                 blog.style.display = "none"
-//                 arrayFiltro = viajesArgentina
-//                 inputSearch.value = ""
-//                 checkedCheckboxes =[]
-//                 pintarHTML(calafate)
-//         }
-//     }
+            default:
+                let calafate = viajes.filter(viajes => viajes.Ciudad == "Calafate");
+                home.style.display = "none"
+                whyUs.style.display = "none"
+                recommendedTrips.style.display = "none"
+                tripsByRegion.style.display = "none"
+                subscriptionsTrips.style.display = "none"
+                newslatter.style.display = "none"
+                allTrips.style.display = "flex"
+                contact.style.display = "none"
+                blog.style.display = "none"
+                pintarHTML(calafate)
+        }
+    }
 
 //FILTRO REGION
 
@@ -374,6 +343,7 @@ function rutas() {
 
 const btnCart = document.querySelector('.fa-cart-shopping');
 const cardContainerCartProducts = document.querySelector(".card-container-shopping-cart")
+
 
 btnCart.addEventListener('click', () => {
 cardContainerCartProducts.classList.toggle('hidden-cart-shopping');
@@ -485,6 +455,21 @@ btnClearAll.addEventListener('click', () => {
 	showHTML()
 })
 
+//modal
+const openModal = document.querySelector("#openModal")
+const closeModal = document.querySelector("#closeModal")
+const modal = document.querySelector("#modal")
+
+openModal.addEventListener("click", ()=>{
+    modal.showModal()
+})
+
+closeModal.addEventListener("click", ()=>{
+    modal.close()
+})
+
+
+
 //FILTROS COMBINADOS
 
 inputSearch.addEventListener("keyup", function (viajes) {
@@ -494,82 +479,62 @@ inputSearch.addEventListener("keyup", function (viajes) {
     console.log(search)
 })
 
-// let categories = viajes.map(evento.Ciudad)
-// console.log(categories)
-// function eventsCategories(array) {
-    
-//     console.log(Ciudades)
-//     let unica = new Set(categories)
-//     let lastCategories = [...unica]
-//     let categoriasEventos = ""
-//     lastCategories.map(Ciudad =>
-//       categoriasEventos +=
-//       `
-//       <label><input type="checkbox" value="${Ciudad}"> ${Ciudad}</label>
-//       `
-//     )
-//     document.getElementById("category").innerHTML = categoriasEventos
-//     checkboxListener()
-//   }
+//Creación dinámica de los checbox
+function eventsCategories(array) {
+    let Provincia = array.map(viajes => viajes.Provincia)
+    let unica = new Set(Provincia)
+    let lastCategories = [...unica]
+    let categoriasViajes = ""
+    lastCategories.map(Provincia =>
+        categoriasViajes +=
+        `
+        <div class="category" id="category">
+        <label><input type="checkbox" value="${Provincia}">${Provincia}</label>
+    </div>
+    `
+    )
+    document.getElementById("checkcategories").innerHTML = categoriasViajes
+    checkboxListener()
+}
 
-// function eventsCategories() {
-//     let categoriasEventos = 
-//       `
-//       <label><input type="checkbox" value="Carrera">Carrera</label>
-//       <label><input type="checkbox" value="Concierto de Música">Concierto de Música</label>
-//       <label><input type="checkbox" value="Feria de Comida">Feria de Comida</label>
-//       <label><input type="checkbox" value="Fiesta de Disfraces">Fiesta de Disfraces</label>
-//       <label><input type="checkbox" value="Intercambio de Libros">Intercambio de Libros</label>
-//       <label><input type="checkbox" value="Salida al Museo">Salida al Museo</label>
-//       <label><input type="checkbox" value="Vamos al Cine">Vamos al Cine</label>
-//       `
-//     document.getElementById("category").innerHTML = categoriasEventos
-//     checkboxListener()
-//   }
+function checkboxListener() {
+    var checkboxs = document.querySelectorAll('input[type=checkbox]');
+    for (i = 0; i < checkboxs.length; i++) {
+        checkboxs[i].addEventListener("change", function () {
+            checkedCheckboxes = []
+            for (i = 0; i < checkboxs.length; i++) {
+                if (checkboxs[i].checked) {
+                    checkedCheckboxes.push(checkboxs[i].value)
+                }
+            }
+            console.log(checkedCheckboxes);
+            filtrosCombinados()
+        })
+    }
+}
 
-// function checkboxListener() {
-//     var checkboxs = document.querySelectorAll('input[type=checkbox]');
-//     for (i = 0; i < checkboxs.length; i++) {
-//         checkboxs[i].addEventListener("click", function () {
-//             checkedCheckboxes = []
-//             for (i = 0; i < checkboxs.length; i++) {
-//                 if (checkboxs[i].checked) {
-//                     checkedCheckboxes.push(checkboxs[i].value)
-//                 }
-//             }
-//             console.log(checkedCheckboxes);
-//             filtrosCombinados()
-//         })
-//     }
-// }
+function filtrosCombinados() {
+    var filtrado = []
+    if (search !== "" && checkedCheckboxes.length > 0) {
+        checkedCheckboxes.map(Provincia => filtrado.push(...arrayAFiltrar.filter(viajes =>
+            viajes.Provincia.toLowerCase().includes(search) && viajes.Provincia === Provincia)
+        ))
+    }
+    else if (search !== "" && checkedCheckboxes.length == 0) {
+       filtrado = arrayAFiltrar.filter(viajes => viajes.Provincia.toLowerCase().includes(search))
+       console.log(filtrado)
 
-  
-// function filtrosCombinados() {
-//     var filtrado = []
-//     if (search !== "" && checkedCheckboxes.length > 0) {
-//       checkedCheckboxes.forEach(category => filtrado.push(...arrayFiltro.filter(evento =>
-//         evento.Ciudad.toLowerCase().trim().includes(search) && evento.category === category)
-//       ))
-//     }
-//     else if (search !== "" && checkedCheckboxes.length == 0) {
-//       filtrado = arrayFiltro.filter(evento => evento.Ciudad.toLowerCase().trim().includes(search))
-//     }
-//     else if (search === "" && checkedCheckboxes.length > 0) {
-//       checkedCheckboxes.forEach(category =>
-//         filtrado.push(...arrayFiltro.filter(evento => evento.category === category))
-//       )
-//     }
-//     else {
-//       filtrado = arrayFiltro
-//     }
-//     filtrado.length > 0 ?
-//         pintarHTML(filtrado) :
-//         tarjetasViajes.innerHTML = `
-//             <div class="ceroResultado">
-//             <h1 class="sinviajess" >No se encontraron viajess para tu busqueda...</h1>
-            
-            
-//             </div>
-//       `
-//       console.log(filtrado)
-//   }
+    }
+    else if (search === "" && checkedCheckboxes.length > 0) {
+        checkedCheckboxes.map(Provincia =>
+            filtrado.push(...arrayAFiltrar.filter(viajes => viajes.Provincia === Provincia))
+        )
+    }
+    else {
+        filtrado = arrayAFiltrar
+    }
+    console.log(filtrado)
+    filtrado.length > 0 ? 
+    pintarHTML(filtrado) :
+    tarjetasViajes.innerHTML = `<h1 class="ceroResult"> No se encontraron viajes para tu búsqueda </h1>`
+}

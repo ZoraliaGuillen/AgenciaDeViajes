@@ -1,4 +1,6 @@
 :root{
+    --black:#111111;
+    --green:#446A12;
     --grey:#CBCBCB;
     --box-shadow: 0 5px 2px -2px rgba(0,0,0,.25);
     --border: 1px solid #CBCBCB;
@@ -7,15 +9,18 @@
 * {
     color: black;
     font-size: 15px;
-    font-weight: 400;
+    font-weight: 500;
     padding: 0; margin: 0;
     box-sizing: border-box;
     border: none; outline: none;
     list-style: none;
     text-decoration: none;
-    font-family: 'Geologica', sans-serif;
+    font-family: 'Montserrat', sans-serif;
 }
 
+body{
+    background-color: black;
+}
 
 header{
     position: fixed;
@@ -24,7 +29,6 @@ header{
 }
 
 .header-one, .header-two{
-    height: 50px;
     padding: 10px 50px;
     display: flex;
     flex-direction: row;
@@ -33,80 +37,123 @@ header{
 }
 
 .header-one{
-    background-color: #111111; 
+    height: 25px;
+    background-color: var(--green);
 }
 
-.header-one .search{
-    background-color: white;
-    width: 250px;
-    height: 30px;
+.header-two{
+    height: 50px;
+}
+
+.header-two.abajo{
+    background-color: black;
+}
+
+.header-two .title{
+    width: 185px;
     display: flex;
     justify-content: left;
     align-items: center;
+    gap: 5px;
 }
 
-.header-one .search i{
-    width: 15px;
-    height: 15px;
-    margin: 5px;
+.header-two .title i{
+    color: var(--green);
+    font-size: 25px;
+}
+
+.header-two .title h1{
+    color: white;
+    font-size: 25px;
+    font-weight: 800;
+}
+
+.header-two nav ul{
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 20px;
 }
 
-.header-one .search input{
-    height: 25px;
-    width: 225px;
+.header-two nav ul a {
+    color: white;
 }
 
-.header-one .icons-search{
+.header-two .icons{
+    width: 185px;
     display: flex;
-    justify-content: center;
+    justify-content: right;
     align-items: center;
     gap: 10px;
 }
 
-.header-one .icons-search i{
+.header-two .icons i{
     color: white;
     font-size: 25px;
 }
 
-.fa-cart-shopping{
+.header-two .icons .fa-cart-shopping{
     position: relative;
     cursor: pointer;
 }
 
-.count-shopping-cart{
+.header-two .icons .count-shopping-cart{
     position: absolute;
-    background-color: red;
+    background-color: var(--green);
     color: #fff;
     width: 25px;
     height: 25px;
-    top: 25px; right: 75px; 
+    top: 50px; right: 25px; 
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.count-shopping-cart span{
-    font-size: 12.5px;
+.header-two .icons .count-shopping-cart .products-count-shopping-cart{
     color: white;
+    font-size: 12.5px;
 }
 
-.card-container-shopping-cart{
+.header-two .icons .card-container-shopping-cart{
     position: absolute;
-    background-color: var(--grey);
-    top: 100px; right:0;
+    background-color: white;
     width: 400px;
     height: auto;
+    top: 75px; right:0;
     padding: 20px;
     border-top: var(--border);
     box-shadow: var(--box-shadow);
-    display: flex;
+    border-radius: 25px;
     flex-direction: column;
+    text-align: center;
     z-index: 1;
 }
+
+.header-two .icons .card-container-shopping-cart h3{
+    font-size: 25px;
+    font-weight: 800;
+}
+
+.modal{
+    width: auto;
+    height: auto;
+    margin-left: 400px;
+    margin-right: 400px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .hidden-cart-shopping{
     display: none;
@@ -139,45 +186,11 @@ header{
     visibility: visible;
 }
 
-.header-two{
-    background-color: black;
-}
 
-.header-two .title{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 2.5px;
-}
-
-.header-two .title > h1{
-    color: white;
-    font-size: 25px;
-    font-weight: 700;
-}
-
-.header-two .title > i{
-    color: white;
-    font-size: 25px;
-}
-
-.header-two nav ul{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-}
-
-.header-two nav ul a {
-    
-    color: white;
-}
 
 .open, .close{
     display: none;
 }
-
-
 
 .home{
     background-image: url(../Images/FondoViajerisimo.jpeg);
@@ -191,17 +204,74 @@ header{
     align-items: center;
 }
 
+.home::before{
+    content: '';
+    position: absolute;
+    top:0; left:0;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(to top, rgba(255, 255, 255, 0), rgba(0,0,0,9));
+}
+
+.home .home-title{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;  
+}
+
+.home .home-title h1{
+    color: white;
+    font-size: 50px;
+    font-weight: 600;  
+}
+
+.home .home-title h3{
+    color: white;
+    font-size: 40px;
+    font-weight: 600;
+}
+
+.home .home-title h3 i{
+    color: var(--green);
+    font-size: 40px;
+}
+
+.home .home-title h3 span{
+    color: white;
+    font-size: 40px;
+    font-weight: 900;
+}
+
+.home .home-title button{
+    background-color: black;
+    color: white;
+    width: auto;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 25px;
+}
+
+.home .home-title button:hover{
+    background-color: var(--green);
+}
+
 .home .home-box{
     background-color: black;
     width: 800px;
     height: 100px;
     padding: 10px;
+    z-index: 1;
 }
 
 .home .home-box .flap{
     background-color: white;
     height: 20px;
-    width: 100px;
+    width: 200px;
     padding: 0px 10px;
     margin-bottom: 10px;
     display: flex;
@@ -211,18 +281,17 @@ header{
 }
 
 
-.home .row{
+.home form{
     display: flex;
-    gap: 10px;
 }
 
-.home .column{
+.home form .column{
     background-color: white;
-    width: 33.33%;
+    width: 30%;
     height: 50px;
-    padding: 5px 10px;
     display: flex;
-    gap: 5px;
+    flex-direction: column;
+    margin: 10px;
 }
 
 .home .column label{
@@ -245,10 +314,12 @@ header{
 }
 
 h2{
+    color: white;
     font-size: 25px;
     font-weight: 600;
-    padding-bottom: 25px;
+    padding: 50px;
     text-align: center;
+    font-weight: 800;
 }
 
 .all-product-delete{
@@ -256,7 +327,7 @@ h2{
 }
 
 .why-us, .recommended-trips, .trips-by-region, .subscriptions-trips{
-    padding: 25px 50px;
+    padding: 0px 50px;
     display: flex;
     flex-direction: column;
 }
@@ -265,6 +336,7 @@ h2{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .why-us > div{
@@ -297,24 +369,23 @@ h2{
     font-size: 35px;
 }
 
+
+
 .card{
+    position: relative;
     background-color: white;
     width: 300px;
-    border: var(--border);
     border-radius: 25px;
-    position: relative;
-    text-align: center;
-}
-
-
-.card img{
-    width: 298px;
-    height: 200px;
-    border-radius: 22.5px 22.5px 0px 0px;
-    background-size: cover;
-    background-position: center;
     
 }
+
+.card img{
+    width: 300px;
+    height: 225px;
+    border-radius: 22.5px 22.5px 0px 0px;
+    
+}
+
 
 .card .position{
     position: absolute;
@@ -328,8 +399,16 @@ h2{
     color: white;
 }
 
-.card p{
+.card p:first-child{
+    font-size: 12.5px;
     padding: 5px 10px;
+    text-align: left;
+    height: 70px;
+}
+
+.card p{
+    font-size: 15px;
+    padding: 15px 10px;
     text-align: left;
 }
 

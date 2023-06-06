@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Geologica:wght@100;200;300;400;500;600;700;800;900&family=Rubik:wght@300;400;500;600;700;800;900&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
         integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
@@ -22,28 +22,7 @@
 <body>
     <header>
         <section class="header-one">
-            <div class="search">
-                <i class="fa-solid fa-magnifying-glass"></i>
-                <input type="search" id="inputSearch" placeholder="Busca aquí...">
-            </div>
-            <div class="icons-search">
-                <i class="fa-solid fa-user"></i>
-                <i class="fa-solid fa-cart-shopping"></i>
-                <div class="count-shopping-cart">
-                    <span class="products-count-shopping-cart">0</span>
-                </div>
-                <div class="card-container-shopping-cart hidden-cart-shopping">
-                    <h2>CARRITO</h2>
-                    <button class="all-product-delete hidden"><i class="fa-solid fa-trash-can">Borrar Todo</i></button>
-                    <div class="row-shopping-cart hidden">
-                    </div>
-                    <div class="cart-total hidden">
-                        <h3>Total</h3>
-                        <span class="total"></span>
-                    </div>
-                    <p class="cart-empty hidden">Tu Carrito Está Vacío :(</p>
-                </div>
-            </div>
+
         </section>
         <section class="header-two">
             <div class="title">
@@ -53,36 +32,83 @@
             <nav>
                 <ul class="nav">
                     <button class="close" id="close"><i class="fa-solid fa-xmark"></i></button>
-                    <li class="navLink"><a href="./index.html#inicio" id="inicio">INICIO</a></li>
-                    <li class="navLink"><a href="./index.html#viajesArgentina" id="viajesArgentina">VIAJES POR
-                            ARGENTINA</a></li>
-                    <li class="navLink"><a href="./index.html#norte" id="norte">NORTE</a></li>
-                    <li class="navLink"><a href="./index.html#centro" id="centro">CENTRO</a></li>
-                    <li class="navLink"><a href="./index.html#sur" id="sur">SUR</a></li>
-                    <li class="navLink"><a href="./index.html#contactopage" id="contactopage">CONTACTO</a></li>
-                    <li class="navLink"><a href="./index.html#blogpage" id="blogpage">BLOG</a></li>
+                    <li class="navLink"><a href="./index.html#inicio" id="inicio">Inicio</a></li>
+                    <li class="navLink"><a href="./index.html#viajesArgentina" id="viajesArgentina">Viajes Por
+                            Argentina</a></li>
+                    <li class="navLink"><a href="./index.html#norte" id="norte">Norte</a></li>
+                    <li class="navLink"><a href="./index.html#centro" id="centro">Centro</a></li>
+                    <li class="navLink"><a href="./index.html#sur" id="sur">Sur</a></li>
+                    <li class="navLink"><a href="./index.html#contactopage" id="contactopage">Contacto</a></li>
+                    <li class="navLink"><a href="./index.html#blogpage" id="blogpage">Blog</a></li>
                 </ul>
             </nav>
-            <button class="open" id="open"><i class="fa-solid fa-bars"></i></button>
+            <div class="icons">
+                <button class="open" id="open"><i class="fa-solid fa-bars"></i></button>
+                <i class="fa-solid fa-user"></i>
+                <i class="fa-solid fa-cart-shopping"></i>
+                <div class="count-shopping-cart">
+                    <span class="products-count-shopping-cart">0</span>
+                </div>
+                <div class="card-container-shopping-cart hidden-cart-shopping">
+                    <h3>CARRITO</h3>
+                    <button class="all-product-delete hidden"><i class="fa-solid fa-trash-can">Borrar Todo</i></button>
+                    <div class="row-shopping-cart hidden">
+                    </div>
+                    <div class="cart-total hidden">
+                        <h3>Total</h3>
+                        <span class="total"></span>
+                        <button id="openModal">Pagar</button>
+                    </div>
+                    <p class="cart-empty hidden">Tu Carrito Está Vacío :(</p>
+                </div>
+                <dialog class="modal" id="modal">
+                    <div>
+                        <p>¡Hola!</p>
+                        <button id="closeModal"><i class="fa-solid fa-x"></i></button>
+                    </div>
+                    <div>
+                        <div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
         </section>
     </header>
     <main>
         <section class="home" id="home">
+            <div class="home-title">
+                <h1>Descubre Argentina</h1>
+                <h3>con <i class="fa-solid fa-suitcase-rolling"></i> <span>Viajerísimo.</span></h3>
+                <button>Ver Viajes por Argentina</button>
+            </div>
             <div class="home-box">
                 <div class="flap">
-                    <i class="fa-solid fa-suitcase-rolling"></i>
-                    <h4>Viaje</h4>
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <h4>Busca tu Viaje</h4>
                 </div>
-                <div class="row">
+                <form action="action">
                     <div class="column">
-                        <form action="action">
-                            <label>Ciudad</label>
-                            <select name="city" id="city">
-                                <option value="">Seleccionar</option>
-                                <option value="Bariloche">Bariloche</option>
-                                <option value="Calafate">Calafate</option>
-                            </select>
-                        </form>
+                        <label>Ciudad</label>
+                        <select name="city" id="city">
+                            <option value="">Seleccionar</option>
+                            <option value="Bariloche">Bariloche</option>
+                            <option value="Calafate">Calafate</option>
+                            <option value="Calafate">Capital Federal</option>
+                            <option value="Misiones">Misiones</option>
+                            <option value="Córdoba">Córdoba</option>
+                            <option value="Jujuy">Jujuy</option>
+                            <option value="La Plata">La Plata</option>
+                            <option value="Mar del Plata">Mar del Plata</option>
+                            <option value="Mendoza">Mendoza</option>
+                            <option value="Puerto Madryn">Puerto Madryn</option>
+                            <option value="Rosario">Rosario</option>
+                            <option value="Salta">Salta</option>
+                            <option value="Santa Fé">Santa Fé</option>
+                            <option value="Tucumán">Tucumán</option>
+                            <option value="Ushuaia">Ushuaia</option>
+                        </select>
                     </div>
                     <div class="column">
                         <label>Fecha Llegada / Fecha Salida</label>
@@ -96,6 +122,58 @@
                         <input id="inputNumber" type="number" value="1" min="1">
                     </div>
                     <button id="botonBuscar">Buscar</button>
+                    <button type="submit">
+                </form>
+        </section>
+        <section class="recommended-trips" id="recommended-trips">
+            <h2>VIAJES RECOMENDADOS</h2>
+            <div class="card-container-recommended-trips">
+                <div class="card">
+                    <img src="./Images/1.png" alt="">
+                    <div class="position">
+                        <h3 class="product-name">Bariloche</h3>
+                        <button><a href="./Html/Details.html?=id${array[i].Id}">Ver Detalle</a></button>
+                    </div>
+                    <div>
+                        <p>Lugares A Vistar: Centro, Centro Cívico Bariloche, Cerro Campanario, Cerro Catedral,
+                            Teleférico Cerro Otto, Parque Nacional Nahuel Huap.</p>
+                        <p class="product-price">Precio por Noche/Persona: $300</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="./Images/3.png" alt="">
+                    <div class="position">
+                        <h3 class="product-name">Capital Federal</h3>
+                        <button><a href="Html/Details.html?=id${array[i].Id}">Ver Detalle</a></button>
+                    </div>
+                    <div>
+                        <p>Lugares A Visitar: Centro, Obelisco, Teatro Colon, Casa Rosada, Plaza de Mayo, Puerto Madero,
+                            Puente de la Mujer, Rosedal de Palermo, San Telmo, La Boca.</p>
+                        <p>Precio por Noche/Persona: $180</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="./Images/4.png" alt="">
+                    <div class="position">
+                        <h3 class="product-name">Cataratas de Iguazú</h3>
+                        <button><a href="./Html/Details.html?=id${array[i].Id}">Ver Detalle</a></button>
+                    </div>
+                    <div>
+                        <p>Lugares A Visitar: Centro, Triple Frontera, Parque Nacional Iguazú</p>
+                        <p>Precio por Noche/Persona: $370</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="./Images/9.png" alt="">
+                    <div class="position">
+                        <h3 class="product-name">Mendoza</h3>
+                        <button><a href="./Html/Details.html?=id${array[i].Id}">Ver Detalle</a></button>
+                    </div>
+                    <div>
+                        <p>Lugares A Visitar: Centro, Bodegas de Mendoza, Cerro de los Siete Colores, Parque provincial
+                            Aconcagua.</p>
+                        <p>Precio por Noche/Persona: $490</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -122,58 +200,13 @@
                 </div>
             </div>
         </section>
-        <section class="recommended-trips" id="recommended-trips">
-            <h2>Viajes Recomendados</h2>
-            <div class="card-container-recommended-trips">
-                <div class="card">
-                    <img src="./Images/1.png" alt="">
-                    <div class="position">
-                        <h3 class="product-name">Bariloche</h3>
-                        <button><a href="./Html/Details.html?=id${array[i].Id}">VER DETALLE</a></button>
-                    </div>
-                    <div>
-                        <p class="product-price">Precio por Noche/Persona: $300</p>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="./Images/3.png" alt="">
-                    <div class="position">
-                        <h3 class="product-name">Capital Federal</h3>
-                        <button><a href="Html/Details.html?=id${array[i].Id}">VER DETALLE</a></button>
-                    </div>
-                    <div>
-                        <p>Precio por Noche/Persona: $180</p>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="./Images/4.png" alt="">
-                    <div class="position">
-                        <h3 class="product-name">Cataratas de Iguazú</h3>
-                        <button><a href="./Html/Details.html?=id${array[i].Id}">VER DETALLE</a></button>
-                    </div>
-                    <div>
-                        <p>Precio por Noche/Persona: $370</p>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="./Images/9.png" alt="">
-                    <div class="position">
-                        <h3 class="product-name">Mendoza</h3>
-                        <button><a href="./Html/Details.html?=id${array[i].Id}">VER DETALLE</a></button>
-                    </div>
-                    <div>
-                        <p>Precio por Noche/Persona: $490</p>
-                    </div>
-                </div>
-            </div>
-        </section>
         <section class="trips-by-region" id="trips-by-region">
             <h2>Descubre los Viajes por Región</h2>
             <div class="card-container-trips-by-region">
                 <div class="card-trips-by-region" id="norte">
                     <img src="./Images/NORTE.png" alt="">
                     <h3>NORTE</h3>
-                </div >
+                </div>
                 <div class="card-trips-by-region" id="centro">
                     <img src="./Images/CENTRO.png" alt="">
                     <h3>CENTRO</h3>
