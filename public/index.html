@@ -79,7 +79,7 @@
                             <select name="" id="city">
                                 <option value="">Seleccionar</option>
                                 <option value="Bariloche">Bariloche</option>
-                                <option value="ca">Calafate</option>
+                                <option value="Calafate">Calafate</option>
                             </select>
                         </form>
                     </div>
@@ -92,9 +92,9 @@
                     </div>
                     <div class="column">
                         <label>No. de Personas</label>
-                        <input type="text">
+                        <input id="inputNumber" type="number" value="1" min="1">
                     </div>
-                    <button>Buscar</button>
+                    <button id="botonBuscar">Buscar</button>
                 </div>
             </div>
         </section>
@@ -169,15 +169,15 @@
         <section class="trips-by-region" id="trips-by-region">
             <h2>Descubre los Viajes por Región</h2>
             <div class="card-container-trips-by-region">
-                <div class="position" id="norte">
+                <div class="card-trips-by-region" id="norte">
                     <img src="./Images/NORTE.png" alt="">
                     <h3>NORTE</h3>
-                </div>
-                <div class="position">
+                </div >
+                <div class="card-trips-by-region" id="centro">
                     <img src="./Images/CENTRO.png" alt="">
                     <h3>CENTRO</h3>
                 </div>
-                <div class="position">
+                <div class="card-trips-by-region" id="sur">
                     <img src="./Images/SUR.png" alt="">
                     <h3>SUR</h3>
                 </div>
