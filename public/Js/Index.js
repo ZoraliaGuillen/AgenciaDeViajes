@@ -1,4 +1,22 @@
-let viajes;
+let navViajes = document.getElementsByClassName("navLink")
+let tarjetasViajes = document.getElementById("card-container-all-trips")
+let home = document.getElementById("home")
+let whyUs = document.getElementById("why-us")
+let recommendedTrips = document.getElementById("recommended-trips")
+let tripsByRegion = document.getElementById("trips-by-region")
+let tripsByProvince = document.getElementById("trips-by-province")
+let subscriptionsTrips = document.getElementById("subscriptions-trips")
+let newslatter = document.getElementById("newslatter")
+let allTrips = document.getElementById("all-trips")
+let contact = document.getElementById("contact")
+let blog = document.getElementById("blog")
+let filtroRegion = document.getElementById("ard-container-trips-by-region")
+var searchContainer = document.getElementById("searchContainer")   
+let inputSearch = document.getElementById("inputSearchcontainer")
+let search = ""
+let checkedCheckboxes = []
+let arrayAFiltrar = []
+let viajes
 
 async function infoViajes() {
 
@@ -18,7 +36,7 @@ async function infoViajes() {
     console.log("viajes",dataApi);
 
     rutas()
-    imprimir()
+   // imprimir()
 
    })
 }
@@ -37,7 +55,7 @@ let newslatter = document.getElementById("newslatter")
 let allTrips = document.getElementById("all-trips")
 let contact = document.getElementById("contact")
 let blog = document.getElementById("blog")
-let filtroRegion = document.getElementById("card-container-trips-by-region")
+let filtroRegion = document.getElementById("ard-container-trips-by-region")
    
 let inputSearch = document.getElementById("inputSearch")
 let search = ""
@@ -81,12 +99,13 @@ async function imprimir(id) {
             allTrips.style.display = "flex"
             contact.style.display = "none"
             blog.style.display = "none"
-            arrayFiltro = viajesArgentina
+            arrayAFiltrar = viajes
             inputSearch.value = ""
             checkedCheckboxes =[]
-            eventsCategories = (viajesArgentina)
+            eventsCategories(viajes)
             console.log("entre a ViajesArgentina")
             pintarHTML(viajes)
+            searchContainer.style.display = "flex"
             break;
         case "norte":
             let norte = viajes.filter(viajes => viajes.Region == "Norte");
@@ -99,11 +118,13 @@ async function imprimir(id) {
             allTrips.style.display = "flex"
             contact.style.display = "none"
             blog.style.display = "none"
+            arrayAFiltrar = norte
             inputSearch.value = ""
-            checkboxListener = (norte)
-            arrayFiltro = norte
+            checkedCheckboxes =[]
+            eventsCategories(norte)
             console.log("entre a norte")
             pintarHTML(norte)
+            searchContainer.style.display = "flex"
             break;
         case "centro":
             let centro = viajes.filter(viajes => viajes.Region == "Centro");
@@ -116,11 +137,13 @@ async function imprimir(id) {
             allTrips.style.display = "flex"
             contact.style.display = "none"
             blog.style.display = "none"
+            arrayAFiltrar = centro
             inputSearch.value = ""
-            checkboxListener = (centro)
-            arrayFiltro = centro
+            checkedCheckboxes =[]
+            eventsCategories(centro)
             console.log("entre a centro")
             pintarHTML(centro)
+            searchContainer.style.display = "flex"
             break;
         case "sur":
             let sur = viajes.filter(viajes => viajes.Region == "Sur");
@@ -134,12 +157,14 @@ async function imprimir(id) {
             contact.style.display = "none"
             blog.style.display = "none"
             inputSearch.value = ""
-            checkboxListener = (sur)
-            arrayFiltro = sur
+            checkboxListener(sur)
+            arrayAFiltrar= sur
             console.log("entre a sur")            
             pintarHTML(sur)
+            searchContainer.style.display = "flex"
+            eventsCategories(sur)
             break;
-        case "contacto":
+        case "contactpage":
             home.style.display = "none"
             whyUs.style.display = "none"
             recommendedTrips.style.display = "none"
@@ -150,8 +175,9 @@ async function imprimir(id) {
             contact.style.display = "contact"
             blog.style.display = "none"
             console.log("entre a contacto")
+            searchContainer.style.display = "none"
             break;
-        case "blog":
+        case "blogpage":
             home.style.display = "none"
             whyUs.style.display = "none"
             recommendedTrips.style.display = "none"
@@ -160,8 +186,10 @@ async function imprimir(id) {
             newslatter.style.display = "none"
             allTrips.style.display = "none"
             contact.style.display = "none"
+            searchContainer.style.display = "none"
             blog.style.display = "flex"
             console.log("entre a blog")
+            // pintarBlog()
             break;
         default:
             home.style.display = "flex"
@@ -174,6 +202,8 @@ async function imprimir(id) {
             contact.style.display = "none"
             blog.style.display = "none"
             console.log("entre a inicio")
+            searchContainer.style.display = "flex"
+            arrayAFiltrar= viajes
             break;
     }
 }
@@ -257,10 +287,10 @@ function rutas() {
         case "sur": imprimir("sur")
             console.log("Entre a sur")
             break;
-        case "contacto": imprimir("contacto")
+        case "contactpage": imprimir("contactpage")
             console.log("Entre a contacto")
             break;
-        case "blog": imprimir("blog")
+        case "blogpage": imprimir("blogpage")
             console.log("Entre a blog")
             break;
         default: imprimir("inicio")
@@ -269,44 +299,57 @@ function rutas() {
 
 }
 
-async function imprimirDos(value) {
-    console.log(value)
-    switch (value) {
+// select = document.getElementById('city')
+// value = select.options[select.selectedIndex].value
+// console.log(value)
 
-        case "Bariloche":
-            let bariloche = viajes.filter(viajes => viajes.Ciudad == "Bariloche");
-            home.style.display = "none"
-            whyUs.style.display = "none"
-            recommendedTrips.style.display = "none"
-            tripsByRegion.style.display = "none"
-            subscriptionsTrips.style.display = "none"
-            newslatter.style.display = "none"
-            allTrips.style.display = "flex"
-            contact.style.display = "none"
-            blog.style.display = "none"
-            arrayFiltro = viajesArgentina
-            inputSearch.value = ""
-            checkedCheckboxes =[]
-            pintarHTML(bariloche)
-            break;
+// for (var i = 0; i < select.length; i++) {
+//     var element = select[i];
+//     element.addEventListener("click", function (e) {
+//         imprimirDos(e.target.value)
+//     })
+// }
+
+// async function imprimirDos(value) {
+//     console.log(value)
+//     switch (value) {
+
+//         case "Bariloche":
+//             let bariloche = viajes.filter(viajes => viajes.Ciudad == "Bariloche");
+//             home.style.display = "none"
+//             whyUs.style.display = "none"
+//             recommendedTrips.style.display = "none"
+//             tripsByRegion.style.display = "none"
+//             tripsByProvince.style.display = "none"
+//             subscriptionsTrips.style.display = "none"
+//             newslatter.style.display = "none"
+//             allTrips.style.display = "flex"
+//             contact.style.display = "none"
+//             blog.style.display = "none"
+//             arrayFiltro = viajesArgentina
+//             inputSearch.value = ""
+//             checkedCheckboxes =[]
+//             pintarHTML(bariloche)
+//             break;
             
-            default:
-                let calafate = viajes.filter(viajes => viajes.Ciudad == "Calafate");
-                home.style.display = "none"
-                whyUs.style.display = "none"
-                recommendedTrips.style.display = "none"
-                tripsByRegion.style.display = "none"
-                subscriptionsTrips.style.display = "none"
-                newslatter.style.display = "none"
-                allTrips.style.display = "flex"
-                contact.style.display = "none"
-                blog.style.display = "none"
-                arrayFiltro = viajesArgentina
-                inputSearch.value = ""
-                checkedCheckboxes =[]
-                pintarHTML(calafate)
-        }
-    }
+//             default:
+//                 let calafate = viajes.filter(viajes => viajes.Ciudad == "Calafate");
+//                 home.style.display = "none"
+//                 whyUs.style.display = "none"
+//                 recommendedTrips.style.display = "none"
+//                 tripsByRegion.style.display = "none"
+//                 tripsByProvince.style.display = "none"
+//                 subscriptionsTrips.style.display = "none"
+//                 newslatter.style.display = "none"
+//                 allTrips.style.display = "flex"
+//                 contact.style.display = "none"
+//                 blog.style.display = "none"
+//                 arrayFiltro = viajesArgentina
+//                 inputSearch.value = ""
+//                 checkedCheckboxes =[]
+//                 pintarHTML(calafate)
+//         }
+//     }
 
 //FILTRO REGION
 
@@ -319,6 +362,7 @@ async function imprimirDos(value) {
 //         else if (e.target.parentElement.id == "centro") {
 //             imprimir("centro")
 //         }
+
 //         else {
 //             imprimir("sur")
 //         }
@@ -446,10 +490,12 @@ btnClearAll.addEventListener('click', () => {
 inputSearch.addEventListener("keyup", function (viajes) {
     const datoInput = viajes.target.value
     search = datoInput.trim().toLowerCase()
+    filtrosCombinados()
     console.log(search)
 })
 
-
+// let categories = viajes.map(evento.Ciudad)
+// console.log(categories)
 // function eventsCategories(array) {
     
 //     console.log(Ciudades)
@@ -498,32 +544,32 @@ inputSearch.addEventListener("keyup", function (viajes) {
 // }
 
   
-function filtrosCombinados() {
-    var filtrado = []
-    if (search !== "" && checkedCheckboxes.length > 0) {
-      checkedCheckboxes.forEach(category => filtrado.push(...arrayFiltro.filter(evento =>
-        evento.name.toLowerCase().trim().includes(search) && evento.category === category)
-      ))
-    }
-    else if (search !== "" && checkedCheckboxes.length == 0) {
-      filtrado = arrayFiltro.filter(evento => evento.name.toLowerCase().trim().includes(search))
-    }
-    else if (search === "" && checkedCheckboxes.length > 0) {
-      checkedCheckboxes.forEach(category =>
-        filtrado.push(...arrayFiltro.filter(evento => evento.category === category))
-      )
-    }
-    else {
-      filtrado = arrayFiltro
-    }
-    filtrado.length > 0 ?
-        pintarHTML(filtrado) :
-        tarjetasViajes.innerHTML = `
-            <div class="ceroResultado">
-            <h1 class="sinviajess" >No se encontraron viajess para tu busqueda...</h1>
+// function filtrosCombinados() {
+//     var filtrado = []
+//     if (search !== "" && checkedCheckboxes.length > 0) {
+//       checkedCheckboxes.forEach(category => filtrado.push(...arrayFiltro.filter(evento =>
+//         evento.Ciudad.toLowerCase().trim().includes(search) && evento.category === category)
+//       ))
+//     }
+//     else if (search !== "" && checkedCheckboxes.length == 0) {
+//       filtrado = arrayFiltro.filter(evento => evento.Ciudad.toLowerCase().trim().includes(search))
+//     }
+//     else if (search === "" && checkedCheckboxes.length > 0) {
+//       checkedCheckboxes.forEach(category =>
+//         filtrado.push(...arrayFiltro.filter(evento => evento.category === category))
+//       )
+//     }
+//     else {
+//       filtrado = arrayFiltro
+//     }
+//     filtrado.length > 0 ?
+//         pintarHTML(filtrado) :
+//         tarjetasViajes.innerHTML = `
+//             <div class="ceroResultado">
+//             <h1 class="sinviajess" >No se encontraron viajess para tu busqueda...</h1>
             
             
-            </div>
-      `
-      console.log(filtrado)
-  }
+//             </div>
+//       `
+//       console.log(filtrado)
+//   }

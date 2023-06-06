@@ -465,8 +465,46 @@ h2{
     text-align: center;
 }
 
-
-
+/* search */
+.searchContainer {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-bottom: 2px;
+    background-color: #ccc;
+    padding: 10px;
+    border-radius: 10px;
+  }
+  
+  .checkbox-container {
+    display: flex;
+    align-items: center;
+    margin-left: auto; 
+    background-color: #ccc;
+    padding: 5px;
+    flex-wrap: wrap;
+  }
+  
+  .checkbox-container label {
+    margin-right: 5px;
+    font-size: 14px;
+    text-align: justify;
+  }
+  
+  .checkbox-container label::before {
+    content: '';
+    display: inline-block;
+    width: 0;
+    height: 0;
+    vertical-align: middle;
+  }
+  
+  #inputSearch {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 20px;
+  }
 
 @media (max-width:991px){
 

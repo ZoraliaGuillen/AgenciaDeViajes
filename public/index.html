@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -13,8 +13,9 @@
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
         integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        crossorigin="anonymous" referrerpolicy="no-referrer">
     <link rel="stylesheet" href="./Css/Index.css">
+    <link rel="stylesheet" href="./Css/blog.css">
     <title>Viajerisimo</title>
 </head>
 
@@ -58,8 +59,8 @@
                     <li class="navLink"><a href="./index.html#norte" id="norte">NORTE</a></li>
                     <li class="navLink"><a href="./index.html#centro" id="centro">CENTRO</a></li>
                     <li class="navLink"><a href="./index.html#sur" id="sur">SUR</a></li>
-                    <li class="navLink"><a href="./index.html#contacto" id="contacto">CONTACTO</a></li>
-                    <li class="navLink"><a href="./index.html#blog" id="blog">BLOG</a></li>
+                    <li class="navLink"><a href="./index.html#contactopage" id="contactopage">CONTACTO</a></li>
+                    <li class="navLink"><a href="./index.html#blogpage" id="blogpage">BLOG</a></li>
                 </ul>
             </nav>
             <button class="open" id="open"><i class="fa-solid fa-bars"></i></button>
@@ -74,9 +75,9 @@
                 </div>
                 <div class="row">
                     <div class="column">
-                        <form action="">
+                        <form action="action">
                             <label>Ciudad</label>
-                            <select name="" id="city">
+                            <select name="city" id="city">
                                 <option value="">Seleccionar</option>
                                 <option value="Bariloche">Bariloche</option>
                                 <option value="Calafate">Calafate</option>
@@ -138,7 +139,7 @@
                     <img src="./Images/3.png" alt="">
                     <div class="position">
                         <h3 class="product-name">Capital Federal</h3>
-                        <button><a href="./Html/Details.html?=id${array[i].Id}">VER DETALLE</a></button>
+                        <button><a href="Html/Details.html?=id${array[i].Id}">VER DETALLE</a></button>
                     </div>
                     <div>
                         <p>Precio por Noche/Persona: $180</p>
@@ -189,22 +190,22 @@
                 <div class="card-subscriptions-trips">
                     <h3>Viajero Basic</h3>
                     <p>A partir de 500 millas por año, obten un 5% de descuento.</p>
-                    <img src="" alt="">
-                    <p>Precio</p>
+                    <img src="Images/basico.jpg" alt="">
+                    <p>Precio: $50</p>
                     <button>Subscribirse</button>
                 </div>
                 <div class="card-subscriptions-trips">
                     <h3>Viajero Standard</h3>
                     <p>A partir de 1.000 millas por año, obten un 10% de descuento.</p>
-                    <img src="" alt="">
-                    <p>Precio</p>
+                    <img src="Images/standar.jpg" alt="">
+                    <p>Precio: $100</p>
                     <button>Subscribirse</button>
                 </div>
                 <div class="card-subscriptions-trips">
                     <h3>Viajero Premium</h3>
                     <p>A partir de 1.500 millas por año, obten un 15% de descuento.</p>
-                    <img src="" alt="">
-                    <p>Precio</p>
+                    <img src="Images/premium.jpg" alt="">
+                    <p>Precio: $200</p>
                     <button>Subscribirse</button>
                 </div>
             </div>
@@ -212,12 +213,12 @@
         <section class="newslatter" id="newslatter">
             <h2 class="newslatterTitle">NEWSLATTER</h2>
             <p>Suscribite a nuestro NEWSLATTER para conocer más de Viajerisimo.</p>
-            <input type="email" name="" id="" placeholder="Ingresa tu email..">
+            <input type="email" name="email" id="email" placeholder="Ingresa tu email..">
             <button>Suscribite</button>
         </section>
 
         <section class="all-trips" id="all-trips">
-            <div class="filters">
+            <!-- <div class="filters">
                 <h3>FILTRAR POR:</h3>
                 <button class="acordeon">
                     <h3>PROVINCIA<i class="fa-solid fa-chevron-down"></i></h3>
@@ -236,17 +237,163 @@
                         <label><input type="checkbox" value="Tierra del Fuego">Tierra del Fuego</label>
                     </div>
                 </button>
-            </div>
-            <div class="card-container-all-trips" id="card-container-all-trips">
-                <h1 class="loading">Carganado Viajes...</h1>
-            </div>
-        </section>
-        <section class="blog" id="blog">
+            </div> -->
 
-        </section>
-        <section class="contact" id="contact">
+            <!-- NUEVO -->
+            <section>
+                <div class="searchContainer" id="searchContainer">
+                    <div class="checkbox-container" id="checkcategories"></div>
+                    <div class="category" id="category">
+                    </div>
+                    <input type="text" id="inputSearchcontainer" placeholder="Busca tu destino favorito...">
+                </div>
+                <div class="card-container-all-trips" id="card-container-all-trips">
+                    <h3 class="loading">Cargando Viajes...</h3>
+                </div>
 
+                <div class="all-trips" id="all-trips"></div>
+            </section>
+
+            <div id="viajes"></div>
+
+            <section class="contact" id="contact"></section>
         </section>
+        <div class="blog" id="blog">
+            <div>
+                <div class="container-name-blog-title">
+                    <h1>Nuestros Mejores Destinos</h1>
+                </div>
+                <div class="container-name-blog">
+                    <h3> Viaja siempre de la mano de Viajerísimo y vive una aventura que jamás olvidarás. <br>
+                        Cada uno de nuestros destinos dejará huellas en tú vida, gracias a la
+                        dedicación y compromiso de nuestra empresa, <br>
+                        en ofrecerles no sólo un destino turístico, sino una gran experiencia por
+                        todos los rincones de éste hermoso país.<br>
+                        Te compartimos las vistas más hermosas de los destinos prefereidos por los argentinos y por los
+                        turístas de todo el mundo.
+                    </h3>
+                </div>
+            </div>
+            <div class="galeria">
+                <div class="contenedor-galeria">
+                    <div class="imagen-viajes">
+                        <img src="Images/bariloche-el-bolson-patagonia.jpg" alt="">
+                        <div class="overlay">
+                            <h2>BOLSON DE LA PATAGONIA</h2>
+                        </div>
+                    </div>
+                    <div class="imagen-viajes ">
+                        <img src="Images/Bariloche.jpg" alt="">
+                        <div class="overlay">
+                            <h2>BARILOCHE</h2>
+                        </div>
+                    </div>
+                    <div class="imagen-viajes">
+                        <img src="Images/bodega-luigi-bosca-mendoza.jpg" alt="">
+                        <div class="overlay">
+                            <h2>MENDOZA</h2>
+                        </div>
+                    </div>
+                    <div class="imagen-viajes">
+                        <img src="Images/caba.jpg" alt="">
+                        <div class="overlay">
+                            <h2>BUENOS AIRES CAPITAL</h2>
+                        </div>
+                    </div>
+
+                    <div class="imagen-viajes">
+                        <img src="Images/calafate.jpg" alt="">
+                        <div class="overlay">
+                            <h2>CALAFATE</h2>
+                        </div>
+                    </div>
+                    <div class="imagen-viajes">
+                        <img src="Images/caminito.jpg" alt="">
+                        <div class="overlay">
+                            <h2>CAMINITO</h2>
+                        </div>
+                    </div>
+                    <div class="imagen-viajes">
+                        <img src="Images/cataratas-paseo.jpg" alt="">
+                        <div class="overlay">
+                            <h2>CATARATAS</h2>
+                        </div>
+                    </div>
+                    <div class="imagen-viajes">
+                        <img src="Images/cataratas.jpg" alt="">
+                        <div class="overlay">
+                            <h2>CATARATAS</h2>
+                        </div>
+                    </div>
+
+                    <div class="imagen-viajes">
+                        <img src="Images/chalten.jpg" alt="">
+                        <div class="overlay">
+                            <h2>CHALTEN</h2>
+                        </div>
+                    </div>
+                    <div class="imagen-viajes">
+                        <img src="Images/cordoba.jpg" alt="">
+                        <div class="overlay">
+                            <h2>CORDOBA</h2>
+                        </div>
+                    </div>
+                    <div class="imagen-viajes">
+                        <img src="Images/la_linda.jpg" alt="">
+                        <div class="overlay">
+                            <h2>LA LINDA</h2>
+                        </div>
+                    </div>
+                    <div class="imagen-viajes">
+                        <img src="Images/Laguna_mar-chiquito-Cordoba.jpg" alt="">
+                        <div class="overlay">
+                            <h2>CORDOBA</h2>
+                        </div>
+                    </div>
+                    <div class="imagen-viajes">
+                        <img src="Images/mar_plata.jpg" alt="">
+                        <div class="overlay">
+                            <h2>MAR DEL PLATA</h2>
+                        </div>
+                    </div>
+                    <div class="imagen-viajes">
+                        <img src="Images/puerto_madryn.jpg" alt="">
+                        <div class="overlay">
+                            <h2>PUERTO MADRYN</h2>
+                        </div>
+                    </div>
+
+                    <div class="imagen-viajes">
+                        <img src="Images/purmarca.jpg" alt="">
+                        <div class="overlay">
+                            <h2>PURMAMARCA</h2>
+                        </div>
+                    </div>
+                    <div class="imagen-viajes">
+                        <img src="Images/salinas.jpg" alt="">
+                        <div class="overlay">
+                            <h2>SALINAS</h2>
+                        </div>
+                    </div>
+                    <div class="imagen-viajes">
+                        <img src="Images/san_martin.jpg" alt="">
+                        <div class="overlay">
+                            <h2>SAN MARTIN</h2>
+                        </div>
+                    </div>
+
+                    <div class="imagen-viajes">
+                        <img src="Images/Ushuaia.jpg" alt="">
+                        <div class="overlay">
+                            <h2>USHUAIA</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
     </main>
     <footer>
         <section class="footer">
